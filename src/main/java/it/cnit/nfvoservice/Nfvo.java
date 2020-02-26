@@ -2,10 +2,9 @@ package it.cnit.nfvoservice;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
 
 @Entity
 @Data
@@ -14,9 +13,13 @@ public class Nfvo {
     @GeneratedValue
     private long id;
 
-    @NotNull
-    private String nfvoType;
-    @NotNull
-    private String site;
-    private String url;
+    private @NotNull String name;
+    private @NotNull String nfvoType;
+    private @NotNull String site;
+    private String uri;
+    private Date createdAt;
+    private Date updatedAt;
+
+    @OneToOne(mappedBy = "nfvo")
+    private @NotNull NfvoCredentials nfvoCredentials;
 }

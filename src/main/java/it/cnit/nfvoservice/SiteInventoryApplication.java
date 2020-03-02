@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NfvoserviceApplication {
+public class SiteInventoryApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NfvoserviceApplication.class, args);
+        SpringApplication.run(SiteInventoryApplication.class, args);
     }
 
 }

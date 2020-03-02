@@ -1,2 +1,2 @@
-# nfvo-service
-A REST service to store and retrieve information about local NFVOs
+# site-inventory
+A REST service to store and retrieve information about trial sites and their resources 

@@ -3,9 +3,8 @@ package it.cnit.nfvoservice;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.MapsId;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -13,10 +12,8 @@ import javax.validation.constraints.NotNull;
 public class NfvoCredentials {
 
     @Id
+    @GeneratedValue
     private long id;
-    @OneToOne
-    @MapsId
-    private Nfvo nfvo;
 
     private @NotNull String host;
     private @NotNull String project;

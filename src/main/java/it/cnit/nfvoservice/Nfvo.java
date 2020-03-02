@@ -1,6 +1,7 @@
 package it.cnit.nfvoservice;
 
 import lombok.Data;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,6 +21,8 @@ public class Nfvo {
     private Date createdAt;
     private Date updatedAt;
 
-    @OneToOne(mappedBy = "nfvo")
-    private @NotNull NfvoCredentials nfvoCredentials;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "credentials")
+    @RestResource(exported = false)
+    private NfvoCredentials credentials;
 }

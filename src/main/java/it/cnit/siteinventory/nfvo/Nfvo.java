@@ -18,7 +18,7 @@ public class Nfvo {
     private long id;
 
     private @NotNull String name;
-    private @NotNull String nfvoType;
+    private @NotNull String type;
     private String uri;
     private Date createdAt;
     private Date updatedAt;

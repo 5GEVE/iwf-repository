@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.nfvo;
 
+import it.cnit.siteinventory.site.Site;
 import it.cnit.siteinventory.vim.Vim;
 import lombok.Data;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -18,7 +19,6 @@ public class Nfvo {
 
     private @NotNull String name;
     private @NotNull String nfvoType;
-    private @NotNull String site;
     private String uri;
     private Date createdAt;
     private Date updatedAt;
@@ -30,4 +30,7 @@ public class Nfvo {
 
     @OneToMany(mappedBy = "nfvo")
     private List<Vim> vims;
+
+    @ManyToOne
+    private Site site;
 }

@@ -17,6 +17,6 @@ public class Vim {
     private @NotNull String type;
 
     @ManyToOne
-    @JoinColumn(name = "nfvo_id", nullable = false)
+    @JoinColumn(name = "nfvo_id")
     private Nfvo nfvo;
 }

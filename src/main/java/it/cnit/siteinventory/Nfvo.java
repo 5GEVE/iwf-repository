@@ -6,7 +6,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,5 +28,5 @@ public class Nfvo {
     private NfvoCredentials credentials;
 
     @OneToMany(mappedBy = "nfvo")
-    private Set<Vim> vims;
+    private List<Vim> vims;
 }

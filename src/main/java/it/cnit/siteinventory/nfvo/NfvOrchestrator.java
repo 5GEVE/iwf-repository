@@ -12,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Nfvo {
+public class NfvOrchestrator {
     @Id
     @GeneratedValue
     private long id;
@@ -26,7 +26,7 @@ public class Nfvo {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "credentials")
     @RestResource(exported = false)
-    private NfvoCredentials credentials;
+    private NfvOrchestratorCredentials credentials;
 
     @OneToMany(mappedBy = "nfvo")
     private List<Vim> vims;

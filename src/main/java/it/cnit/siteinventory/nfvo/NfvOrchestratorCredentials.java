@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
-public class NfvoCredentials {
+public class NfvOrchestratorCredentials {
 
     @Id
     @GeneratedValue

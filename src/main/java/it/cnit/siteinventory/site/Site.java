@@ -1,6 +1,6 @@
 package it.cnit.siteinventory.site;
 
-import it.cnit.siteinventory.nfvo.Nfvo;
+import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.rano.RanOrchestrator;
 import lombok.Data;
 
@@ -22,7 +22,7 @@ public class Site {
     private @NotNull String location;
 
     @OneToMany(mappedBy = "site")
-    private List<Nfvo> nfvos;
+    private List<NfvOrchestrator> nfvos;
 
     @OneToMany(mappedBy = "site")
     private List<RanOrchestrator> ranos;

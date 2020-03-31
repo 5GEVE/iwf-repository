@@ -1,6 +1,7 @@
 package it.cnit.siteinventory.site;
 
 import it.cnit.siteinventory.nfvo.Nfvo;
+import it.cnit.siteinventory.rano.RanOrchestrator;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -22,4 +23,7 @@ public class Site {
 
     @OneToMany(mappedBy = "site")
     private List<Nfvo> nfvos;
+
+    @OneToMany(mappedBy = "site")
+    private List<RanOrchestrator> ranos;
 }

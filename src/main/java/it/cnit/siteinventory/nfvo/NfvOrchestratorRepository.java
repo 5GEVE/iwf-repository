@@ -7,6 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "nfvos", path = "nfvos")
-public interface NfvoRepository extends PagingAndSortingRepository<NfvOrchestrator, Long> {
+public interface NfvOrchestratorRepository extends PagingAndSortingRepository<NfvOrchestrator, Long> {
     List<NfvOrchestrator> findBySite(@Param("site") String site);
 }

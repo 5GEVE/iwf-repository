@@ -16,6 +16,7 @@ public class Vim {
 
     private @NotNull String name;
     private @NotNull String type;
+    private String uri;
 
     @ManyToOne
     private Nfvo nfvo;

@@ -1,5 +1,6 @@
-package it.cnit.siteinventory;
+package it.cnit.siteinventory.nfvo;
 
+import it.cnit.siteinventory.vim.Vim;
 import lombok.Data;
 import org.springframework.data.rest.core.annotation.RestResource;
 

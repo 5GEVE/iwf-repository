@@ -1,5 +1,6 @@
-package it.cnit.siteinventory;
+package it.cnit.siteinventory.vim;
 
+import it.cnit.siteinventory.nfvo.Nfvo;
 import lombok.Data;
 
 import javax.persistence.*;

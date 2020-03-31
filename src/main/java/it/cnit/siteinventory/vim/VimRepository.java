@@ -1,5 +1,6 @@
-package it.cnit.siteinventory;
+package it.cnit.siteinventory.vim;
 
+import it.cnit.siteinventory.nfvo.Nfvo;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;

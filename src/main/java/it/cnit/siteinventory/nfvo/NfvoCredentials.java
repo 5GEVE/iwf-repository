@@ -1,4 +1,4 @@
-package it.cnit.siteinventory;
+package it.cnit.siteinventory.nfvo;
 
 import lombok.Data;
 

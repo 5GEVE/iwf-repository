@@ -1,4 +1,4 @@
-package it.cnit.siteinventory;
+package it.cnit.siteinventory.nfvo;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;

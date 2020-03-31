@@ -1,6 +1,7 @@
 package it.cnit.siteinventory.nfvo;
 
 import it.cnit.siteinventory.site.Site;
+import it.cnit.siteinventory.subscription.LccnSubscription;
 import it.cnit.siteinventory.vim.Vim;
 import lombok.Data;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -30,6 +31,9 @@ public class NfvOrchestrator {
 
     @OneToMany(mappedBy = "nfvo")
     private List<Vim> vims;
+
+    @OneToMany(mappedBy = "nfvo")
+    private List<LccnSubscription> subscriptions;
 
     @ManyToOne
     private Site site;

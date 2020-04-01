@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>it.cnit</groupId>
-    <artifactId>nfvoservice</artifactId>
+    <artifactId>siteinventory</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>nfvoservice</name>
-    <description>Simple REST API to manage NFVO information</description>
+    <name>siteinventory</name>
+    <description>Simple REST API to manage 5G EVE site information</description>
 
     <properties>
         <java.version>1.8</java.version>

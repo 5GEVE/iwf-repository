@@ -17,6 +17,6 @@ public class NfvOrchestratorCredentials {
 
     private @NotNull String host;
     private @NotNull String project;
-    private @NotNull String user;
+    private @NotNull String username;
     private @NotNull String password;
 }

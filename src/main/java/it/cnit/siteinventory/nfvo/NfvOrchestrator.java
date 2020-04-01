@@ -25,7 +25,6 @@ public class NfvOrchestrator {
     private Date updatedAt;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "credentials")
     @RestResource(exported = false)
     private NfvOrchestratorCredentials credentials;
 

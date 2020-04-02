@@ -28,7 +28,7 @@ public class NfvOrchestrator {
     @RestResource(exported = false)
     private NfvOrchestratorCredentials credentials;
 
-    @OneToMany(mappedBy = "nfvo")
+    @ManyToMany(mappedBy = "nfvos")
     private List<Vim> vims;
 
     @OneToMany(mappedBy = "nfvo")

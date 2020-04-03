@@ -23,12 +23,17 @@ public @interface ValueOfEnum {
     /**
      * @return class containing enum values to which this String should match
      */
-    Class<? extends Enum<?>> enumClass();
+    Class<? extends Enum<?>> value();
+
+    /**
+     * @return optional string values of the enum for better error message
+     */
+    String[] enumStrings() default {};
 
     /**
      * @return the error message template
      */
-    String message() default "must be any of enum {enumClass}";
+    String message() default "must be any of enum ${value.getCanonicalName()} {enumStrings}";
 
     /**
      * @return the groups the constraint belongs to

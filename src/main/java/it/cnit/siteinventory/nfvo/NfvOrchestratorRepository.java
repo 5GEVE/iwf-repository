@@ -8,5 +8,5 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "nfvos", path = "nfvos")
 public interface NfvOrchestratorRepository extends PagingAndSortingRepository<NfvOrchestrator, Long> {
-    List<NfvOrchestrator> findBySite(@Param("site") String site);
+    List<NfvOrchestrator> findByTypeIgnoreCase(@Param("type") String type);
 }

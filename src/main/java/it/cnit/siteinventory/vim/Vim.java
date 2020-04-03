@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.vim;
 
+import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.rano.RanOrchestrator;
 import lombok.Data;
@@ -11,6 +12,10 @@ import java.util.List;
 @Entity
 @Data
 public class Vim {
+    enum Location {
+        CLOUD,
+        EDGE;
+    }
 
     @Id
     @GeneratedValue
@@ -19,6 +24,7 @@ public class Vim {
     private @NotNull String name;
     private @NotNull String type;
     private String uri;
+    private @ValueOfEnum(value = Location.class, enumStrings = {"CLOUD", "EDGE"}) String location;
     private double latitude;
     private double longitude;
 

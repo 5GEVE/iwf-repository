@@ -19,6 +19,8 @@ public class Vim {
     private @NotNull String name;
     private @NotNull String type;
     private String uri;
+    private double latitude;
+    private double longitude;
 
     @ManyToMany
     @JoinTable(name = "vim_nfvo",

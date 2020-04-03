@@ -12,9 +12,10 @@ import java.util.List;
 @Entity
 @Data
 public class Vim {
+    @SuppressWarnings("unused")
     enum Location {
         CLOUD,
-        EDGE;
+        EDGE
     }
 
     @Id

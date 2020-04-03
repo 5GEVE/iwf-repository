@@ -29,6 +29,6 @@ public class Vim {
     @ManyToMany
     @JoinTable(name = "vim_rano",
             joinColumns = @JoinColumn(name = "vim_id"),
-            inverseJoinColumns = @JoinColumn(name = "nfvo_id"))
+            inverseJoinColumns = @JoinColumn(name = "rano_id"))
     private List<RanOrchestrator> ranos;
 }

@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  site-inventory:
+    build:
+      context: .
+    container_name: site-inventory
+    depends_on:
+      - postgres
+    networks:
+      site-inventory-net:
+        aliases:
+          - site-inventory
+    ports:
+      - 8087:8087
+  postgres:
+    image: postgres:12-alpine
+    container_name: siteinventory-db
+    environment:
+      POSTGRES_USER: siteinventory
+      POSTGRES_PASSWORD: siteinventory
+    networks:
+      site-inventory-net:
+        aliases:
+          - postgres
+networks:
+  site-inventory-net:
+

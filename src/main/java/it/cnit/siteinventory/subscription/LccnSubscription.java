@@ -6,8 +6,9 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,9 +19,7 @@ public class LccnSubscription {
 
     private @NotNull String callbackUri;
     private @NotNull String nsInstanceId;
-    private @NotNull String operation;
-    private String lastOperationState;
 
-    @ManyToOne
-    private NfvOrchestrator nfvo;
+    @ManyToMany
+    private List<NfvOrchestrator> nfvos;
 }

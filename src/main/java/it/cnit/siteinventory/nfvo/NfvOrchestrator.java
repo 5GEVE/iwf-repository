@@ -31,7 +31,7 @@ public class NfvOrchestrator {
     @ManyToMany(mappedBy = "nfvos")
     private List<Vim> vims;
 
-    @OneToMany(mappedBy = "nfvo")
+    @ManyToMany(mappedBy = "nfvos")
     private List<LccnSubscription> subscriptions;
 
     @ManyToOne

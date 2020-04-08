@@ -1,6 +1,7 @@
 package it.cnit.siteinventory.subscription;
 
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
+import it.cnit.siteinventory.notification.NotificationType;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -17,8 +18,14 @@ public class LccnSubscription {
     @GeneratedValue
     private long id;
 
-    private @NotNull String callbackUri;
-    private @NotNull String nsInstanceId;
+    @NotNull
+    private String callbackUri;
+
+    @NotNull
+    private String nsInstanceId;
+
+    @ManyToMany
+    private List<NotificationType> notificationTypes;
 
     @ManyToMany
     private List<NfvOrchestrator> nfvos;

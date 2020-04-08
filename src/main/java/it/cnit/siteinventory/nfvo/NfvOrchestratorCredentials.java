@@ -13,7 +13,7 @@ public class NfvOrchestratorCredentials {
 
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     private @NotNull String host;
     private @NotNull String project;

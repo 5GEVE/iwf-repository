@@ -1,0 +1,27 @@
+package it.cnit.siteinventory.rano;
+
+import it.cnit.siteinventory.site.Site;
+import it.cnit.siteinventory.vim.Vim;
+import lombok.Data;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
+
+@Entity
+@Data
+public class RanOrchestrator {
+    @Id
+    @GeneratedValue
+    private long id;
+
+    private @NotNull String name;
+    private @NotNull String type;
+    private String uri;
+
+    @ManyToOne
+    private Site site;
+
+    @ManyToMany(mappedBy = "ranos")
+    private List<Vim> vims;
+}

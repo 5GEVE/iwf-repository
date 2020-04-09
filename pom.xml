@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>it.cnit</groupId>
-    <artifactId>nfvoservice</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>nfvoservice</name>
-    <description>Simple REST API to manage NFVO information</description>
+    <artifactId>siteinventory</artifactId>
+    <version>0.0.1</version>
+    <name>siteinventory</name>
+    <description>Simple REST API to manage 5G EVE site information</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -29,11 +29,12 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-rest-hal-browser</artifactId>
+            <artifactId>spring-data-rest-hal-explorer</artifactId>
+            <version>3.2.6.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
         </dependency>
 
         <dependency>
@@ -51,11 +52,6 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.2.30</version>
         </dependency>
     </dependencies>
 

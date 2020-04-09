@@ -1,4 +1,4 @@
-package it.cnit.nfvoservice;
+package it.cnit.siteinventory.nfvo;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -6,7 +6,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
+@SuppressWarnings("unused")
 @RepositoryRestResource(collectionResourceRel = "nfvos", path = "nfvos")
-public interface NfvoRepository extends PagingAndSortingRepository<Nfvo, Long> {
-    List<Nfvo> findBySite(@Param("site") String site);
+public interface NfvOrchestratorRepository extends PagingAndSortingRepository<NfvOrchestrator, Long> {
+    List<NfvOrchestrator> findByTypeIgnoreCase(@Param("type") String type);
 }

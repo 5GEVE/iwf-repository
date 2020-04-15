@@ -3,7 +3,6 @@ package it.cnit.siteinventory.zone;
 import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.vim.Vim;
 import lombok.Data;
-import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,8 +26,9 @@ public class AvailabilityZone {
     @NotNull
     private String name;
 
+    @NotNull
     @ValueOfEnum(value = Location.class, enumStrings = {"CLOUD", "EDGE"})
-    private String location = "CLOUD";
+    private String location = Location.CLOUD.name();
 
     private double latitude;
 

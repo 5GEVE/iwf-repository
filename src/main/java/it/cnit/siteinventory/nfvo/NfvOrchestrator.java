@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.nfvo;
 
+import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.site.Site;
 import it.cnit.siteinventory.subscription.LccnSubscription;
 import it.cnit.siteinventory.vim.Vim;
@@ -14,14 +15,33 @@ import java.util.List;
 @Entity
 @Data
 public class NfvOrchestrator {
+    @SuppressWarnings("unused")
+    enum OperationalState {
+        ENABLED,
+        DISABLED
+    }
+
     @Id
     @GeneratedValue
     private long id;
 
-    private @NotNull String name;
-    private @NotNull String type;
+    @NotNull
+    private String name;
+
+    @NotNull
+    private String type;
+
+    @NotNull
+    private String version;
+
+    @NotNull
+    @ValueOfEnum(OperationalState.class)
+    private String operationalState = OperationalState.ENABLED.name();
+
     private String uri;
+
     private Date createdAt;
+
     private Date updatedAt;
 
     @OneToOne(cascade = CascadeType.ALL)

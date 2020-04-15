@@ -1,8 +1,8 @@
 package it.cnit.siteinventory.vim;
 
-import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.rano.RanOrchestrator;
+import it.cnit.siteinventory.zone.AvailabilityZone;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,22 +12,18 @@ import java.util.List;
 @Entity
 @Data
 public class Vim {
-    @SuppressWarnings("unused")
-    enum Location {
-        CLOUD,
-        EDGE
-    }
 
     @Id
     @GeneratedValue
     private long id;
 
-    private @NotNull String name;
-    private @NotNull String type;
+    @NotNull
+    private String name;
+
+    @NotNull
+    private String type;
+
     private String uri;
-    private @ValueOfEnum(value = Location.class, enumStrings = {"CLOUD", "EDGE"}) String location;
-    private double latitude;
-    private double longitude;
 
     @ManyToMany
     @JoinTable(name = "vim_nfvo",
@@ -40,4 +36,7 @@ public class Vim {
             joinColumns = @JoinColumn(name = "vim_id"),
             inverseJoinColumns = @JoinColumn(name = "rano_id"))
     private List<RanOrchestrator> ranos;
+
+    @OneToMany(mappedBy = "vim")
+    private List<AvailabilityZone> availabilityZone;
 }

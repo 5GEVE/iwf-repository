@@ -28,8 +28,7 @@ public class AvailabilityZone {
     private String name;
 
     @ValueOfEnum(value = Location.class, enumStrings = {"CLOUD", "EDGE"})
-    @ColumnDefault("'CLOUD'")
-    private String location;
+    private String location = "CLOUD";
 
     private double latitude;
 

@@ -15,8 +15,15 @@ public class NfvOrchestratorCredentials {
     @GeneratedValue
     private Long id;
 
-    private @NotNull String host;
-    private @NotNull String project;
-    private @NotNull String username;
-    private @NotNull String password;
+    @NotNull
+    private String host;
+
+    @NotNull
+    private String project;
+
+    @NotNull
+    private String username;
+
+    @NotNull
+    private String password;
 }

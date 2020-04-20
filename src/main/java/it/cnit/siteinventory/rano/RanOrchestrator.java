@@ -15,8 +15,12 @@ public class RanOrchestrator {
     @GeneratedValue
     private long id;
 
-    private @NotNull String name;
-    private @NotNull String type;
+    @NotNull
+    private String name;
+
+    @NotNull
+    private String type;
+
     private String uri;
 
     @ManyToOne

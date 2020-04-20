@@ -18,8 +18,11 @@ public class Site {
     @GeneratedValue
     private long id;
 
-    private @NotNull String name;
-    private @NotNull String location;
+    @NotNull
+    private String name;
+
+    @NotNull
+    private String location;
 
     @OneToMany(mappedBy = "site")
     private List<NfvOrchestrator> nfvos;

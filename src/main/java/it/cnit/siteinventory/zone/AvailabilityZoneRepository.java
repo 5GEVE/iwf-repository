@@ -7,7 +7,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @SuppressWarnings("unused")
-@RepositoryRestResource(collectionResourceRel = "zones", path = "zones")
+@RepositoryRestResource(collectionResourceRel = "availabilityZones", path = "availabilityZones")
 public interface AvailabilityZoneRepository extends PagingAndSortingRepository<AvailabilityZone, Long> {
     List<AvailabilityZone> findByLocation(@Param("location") String location);
 }

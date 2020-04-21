@@ -1,8 +1,10 @@
 package it.cnit.siteinventory.rano;
 
+import it.cnit.siteinventory.cred.Credentials;
 import it.cnit.siteinventory.site.Site;
 import it.cnit.siteinventory.zone.RanZone;
 import lombok.Data;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -22,6 +24,10 @@ public class RanOrchestrator {
     private String type;
 
     private String uri;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @RestResource(exported = false)
+    private Credentials credentials;
 
     @ManyToOne
     private Site site;

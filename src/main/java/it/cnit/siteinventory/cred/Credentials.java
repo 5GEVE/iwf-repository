@@ -1,4 +1,4 @@
-package it.cnit.siteinventory.nfvo;
+package it.cnit.siteinventory.cred;
 
 import lombok.Data;
 
@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
-public class NfvOrchestratorCredentials {
+public class Credentials {
 
     @Id
     @GeneratedValue

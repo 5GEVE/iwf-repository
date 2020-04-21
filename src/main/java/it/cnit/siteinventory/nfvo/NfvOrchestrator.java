@@ -1,6 +1,7 @@
 package it.cnit.siteinventory.nfvo;
 
 import it.cnit.siteinventory.constraints.ValueOfEnum;
+import it.cnit.siteinventory.cred.Credentials;
 import it.cnit.siteinventory.site.Site;
 import it.cnit.siteinventory.subscription.LccnSubscription;
 import it.cnit.siteinventory.vim.Vim;
@@ -46,7 +47,7 @@ public class NfvOrchestrator {
 
     @OneToOne(cascade = CascadeType.ALL)
     @RestResource(exported = false)
-    private NfvOrchestratorCredentials credentials;
+    private Credentials credentials;
 
     @ManyToMany(mappedBy = "nfvos")
     private List<Vim> vims;

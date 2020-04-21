@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>it.cnit</groupId>
-    <artifactId>siteinventory</artifactId>
-    <version>0.0.1</version>
-    <name>siteinventory</name>
+    <artifactId>site-inventory</artifactId>
+    <version>0.0.2</version>
+    <name>site-inventory</name>
     <description>Simple REST API to manage 5G EVE site information</description>
 
     <properties>

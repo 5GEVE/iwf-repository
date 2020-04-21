@@ -1,8 +1,10 @@
 package it.cnit.siteinventory.rano;
 
+import it.cnit.siteinventory.cred.Credentials;
 import it.cnit.siteinventory.site.Site;
-import it.cnit.siteinventory.vim.Vim;
+import it.cnit.siteinventory.zone.RanZone;
 import lombok.Data;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -15,13 +17,21 @@ public class RanOrchestrator {
     @GeneratedValue
     private long id;
 
-    private @NotNull String name;
-    private @NotNull String type;
+    @NotNull
+    private String name;
+
+    @NotNull
+    private String type;
+
     private String uri;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @RestResource(exported = false)
+    private Credentials credentials;
 
     @ManyToOne
     private Site site;
 
-    @ManyToMany(mappedBy = "ranos")
-    private List<Vim> vims;
+    @OneToMany(mappedBy = "rano")
+    private List<RanZone> ranZones;
 }

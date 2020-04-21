@@ -1,7 +1,7 @@
 package it.cnit.siteinventory.rano;
 
 import it.cnit.siteinventory.site.Site;
-import it.cnit.siteinventory.vim.Vim;
+import it.cnit.siteinventory.zone.RanZone;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -26,6 +26,6 @@ public class RanOrchestrator {
     @ManyToOne
     private Site site;
 
-    @ManyToMany(mappedBy = "ranos")
-    private List<Vim> vims;
+    @OneToMany(mappedBy = "rano")
+    private List<RanZone> ranZones;
 }

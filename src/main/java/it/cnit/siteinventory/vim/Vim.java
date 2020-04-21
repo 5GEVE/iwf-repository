@@ -1,7 +1,6 @@
 package it.cnit.siteinventory.vim;
 
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
-import it.cnit.siteinventory.rano.RanOrchestrator;
 import it.cnit.siteinventory.zone.AvailabilityZone;
 import lombok.Data;
 
@@ -30,12 +29,6 @@ public class Vim {
             joinColumns = @JoinColumn(name = "vim_id"),
             inverseJoinColumns = @JoinColumn(name = "nfvo_id"))
     private List<NfvOrchestrator> nfvos;
-
-    @ManyToMany
-    @JoinTable(name = "vim_rano",
-            joinColumns = @JoinColumn(name = "vim_id"),
-            inverseJoinColumns = @JoinColumn(name = "rano_id"))
-    private List<RanOrchestrator> ranos;
 
     @OneToMany(mappedBy = "vim")
     private List<AvailabilityZone> availabilityZone;

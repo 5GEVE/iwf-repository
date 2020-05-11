@@ -2,33 +2,33 @@ package it.cnit.siteinventory.notification;
 
 import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.subscription.LccnSubscription;
-import lombok.Data;
-
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import lombok.Data;
 
 @Entity
 @Data
 public class NotificationType {
-    @SuppressWarnings("unused")
-    public enum NotificationTypeValue {
-        NsLcmOperationOccurenceNotification,
-        NsIdentifierCreationNotification,
-        NsIdentifierDeletionNotification
-    }
 
-    @Id
-    @GeneratedValue
-    private Long id;
+  @SuppressWarnings("unused")
+  public enum NotificationTypeValue {
+    NsLcmOperationOccurenceNotification,
+    NsIdentifierCreationNotification,
+    NsIdentifierDeletionNotification
+  }
 
-    @NotNull
-    @ValueOfEnum(NotificationTypeValue.class)
-    private String type;
+  @Id
+  @GeneratedValue
+  private Long id;
 
-    @ManyToMany(mappedBy = "notificationTypes")
-    private List<LccnSubscription> lccnSubscriptions;
+  @NotNull
+  @ValueOfEnum(NotificationTypeValue.class)
+  private String type;
+
+  @ManyToMany(mappedBy = "notificationTypes")
+  private List<LccnSubscription> lccnSubscriptions;
 }

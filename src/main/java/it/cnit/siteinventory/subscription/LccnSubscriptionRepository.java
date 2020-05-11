@@ -5,5 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @SuppressWarnings("unused")
 @RepositoryRestResource(collectionResourceRel = "subscriptions", path = "subscriptions")
-public interface LccnSubscriptionRepository extends PagingAndSortingRepository<LccnSubscription, Long> {
+public interface LccnSubscriptionRepository extends
+    PagingAndSortingRepository<LccnSubscription, Long> {
+
 }

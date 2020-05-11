@@ -17,27 +17,27 @@ import lombok.Data;
 @Data
 public class VimAccount {
 
-    @Id
-    @GeneratedValue
-    private long id;
+  @Id
+  @GeneratedValue
+  private long id;
 
-    @NotNull
-    private String name;
+  @NotNull
+  private String name;
 
-    @NotNull
-    private String type;
+  @NotNull
+  private String type;
 
-    private String uri;
+  private String uri;
 
-    private String tenant;
+  private String tenant;
 
-    @OneToOne(mappedBy = "vimAccount")
-    private AvailabilityZone availabilityZone;
+  @OneToOne(mappedBy = "vimAccount")
+  private AvailabilityZone availabilityZone;
 
-    @ManyToMany
-    @JoinTable(name = "vim_nfvo",
-            joinColumns = @JoinColumn(name = "vim_id"),
-            inverseJoinColumns = @JoinColumn(name = "nfvo_id"))
-    private List<NfvOrchestrator> nfvos;
+  @ManyToMany
+  @JoinTable(name = "vim_nfvo",
+      joinColumns = @JoinColumn(name = "vim_id"),
+      inverseJoinColumns = @JoinColumn(name = "nfvo_id"))
+  private List<NfvOrchestrator> nfvos;
 
 }

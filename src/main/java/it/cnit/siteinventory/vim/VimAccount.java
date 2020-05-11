@@ -3,6 +3,7 @@ package it.cnit.siteinventory.vim;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.zone.AvailabilityZone;
 import java.util.List;
+import java.util.UUID;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,6 +21,10 @@ public class VimAccount {
   @Id
   @GeneratedValue
   private long id;
+
+  // This is the id used by the NVFO for this VIM account
+  @NotNull
+  private UUID vimAccountId;
 
   @NotNull
   private String name;

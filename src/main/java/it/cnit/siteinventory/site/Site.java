@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.site;
 
+import it.cnit.siteinventory.datashipper.DataShipper;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.rano.RanOrchestrator;
 import lombok.Data;
@@ -29,4 +30,7 @@ public class Site {
 
     @OneToMany(mappedBy = "site")
     private List<RanOrchestrator> ranos;
+
+    @OneToMany(mappedBy = "site")
+    private List<DataShipper> dataShippers;
 }

@@ -11,19 +11,20 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 @Configuration
 public class RestValidationConfiguration implements RepositoryRestConfigurer {
 
-    // Create a validator to use in bean validation - primary to be able to autowire without qualifier
-    @Bean
-    @Primary
-    Validator validator() {
-        return new LocalValidatorFactoryBean();
-    }
+  // Create a validator to use in bean validation - primary to be able to autowire without qualifier
+  @Bean
+  @Primary
+  Validator validator() {
+    return new LocalValidatorFactoryBean();
+  }
 
 
-    @Override
-    public void configureValidatingRepositoryEventListener(ValidatingRepositoryEventListener validatingListener) {
-        Validator validator = validator();
-        //bean validation always before save and create
-        validatingListener.addValidator("beforeCreate", validator);
-        validatingListener.addValidator("beforeSave", validator);
-    }
+  @Override
+  public void configureValidatingRepositoryEventListener(
+      ValidatingRepositoryEventListener validatingListener) {
+    Validator validator = validator();
+    //bean validation always before save and create
+    validatingListener.addValidator("beforeCreate", validator);
+    validatingListener.addValidator("beforeSave", validator);
+  }
 }

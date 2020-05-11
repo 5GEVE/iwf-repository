@@ -1,32 +1,36 @@
 package it.cnit.siteinventory.site;
 
+import it.cnit.siteinventory.datashipper.DataShipper;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.rano.RanOrchestrator;
-import lombok.Data;
-
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import lombok.Data;
 
 @Entity
 @Data
 public class Site {
-    @Id
-    @GeneratedValue
-    private long id;
 
-    @NotNull
-    private String name;
+  @Id
+  @GeneratedValue
+  private long id;
 
-    @NotNull
-    private String location;
+  @NotNull
+  private String name;
 
-    @OneToMany(mappedBy = "site")
-    private List<NfvOrchestrator> nfvos;
+  @NotNull
+  private String location;
 
-    @OneToMany(mappedBy = "site")
-    private List<RanOrchestrator> ranos;
+  @OneToMany(mappedBy = "site")
+  private List<NfvOrchestrator> nfvos;
+
+  @OneToMany(mappedBy = "site")
+  private List<RanOrchestrator> ranos;
+
+  @OneToMany(mappedBy = "site")
+  private List<DataShipper> dataShippers;
 }

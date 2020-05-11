@@ -2,31 +2,31 @@ package it.cnit.siteinventory.subscription;
 
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.notification.NotificationType;
-import lombok.Data;
-
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
-import java.util.List;
+import lombok.Data;
 
 @Entity
 @Data
 public class LccnSubscription {
-    @Id
-    @GeneratedValue
-    private long id;
 
-    @NotNull
-    private String callbackUri;
+  @Id
+  @GeneratedValue
+  private long id;
 
-    @NotNull
-    private String nsInstanceId;
+  @NotNull
+  private String callbackUri;
 
-    @ManyToMany
-    private List<NotificationType> notificationTypes;
+  @NotNull
+  private String nsInstanceId;
 
-    @ManyToMany
-    private List<NfvOrchestrator> nfvos;
+  @ManyToMany
+  private List<NotificationType> notificationTypes;
+
+  @ManyToMany
+  private List<NfvOrchestrator> nfvos;
 }

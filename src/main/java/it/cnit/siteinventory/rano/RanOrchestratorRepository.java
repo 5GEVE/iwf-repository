@@ -5,5 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @SuppressWarnings("unused")
 @RepositoryRestResource(collectionResourceRel = "ranos", path = "ranos")
-public interface RanOrchestratorRepository extends PagingAndSortingRepository<RanOrchestrator, Long> {
+public interface RanOrchestratorRepository extends
+    PagingAndSortingRepository<RanOrchestrator, Long> {
+
 }

@@ -4,7 +4,7 @@ import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.cred.Credentials;
 import it.cnit.siteinventory.site.Site;
 import it.cnit.siteinventory.subscription.LccnSubscription;
-import it.cnit.siteinventory.vim.Vim;
+import it.cnit.siteinventory.vim.VimAccount;
 import lombok.Data;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -50,7 +50,7 @@ public class NfvOrchestrator {
     private Credentials credentials;
 
     @ManyToMany(mappedBy = "nfvos")
-    private List<Vim> vims;
+    private List<VimAccount> vimAccounts;
 
     @ManyToMany(mappedBy = "nfvos")
     private List<LccnSubscription> subscriptions;

@@ -1,14 +1,13 @@
 package it.cnit.siteinventory.zone;
 
 import it.cnit.siteinventory.constraints.ValueOfEnum;
-import it.cnit.siteinventory.vim.Vim;
-import lombok.Data;
-
+import it.cnit.siteinventory.vim.VimAccount;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+import lombok.Data;
 
 @Entity
 @Data
@@ -34,6 +33,6 @@ public class AvailabilityZone {
 
     private double longitude;
 
-    @ManyToOne
-    private Vim vim;
+    @OneToOne
+    private VimAccount vimAccount;
 }

@@ -53,13 +53,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!-- https://github.com/nextworks-it/slicer-catalogue/tree/5geve-release -->
-        <dependency>
-            <groupId>it.nextworks.nfvmano</groupId>
-            <artifactId>EveBlueprintsIM</artifactId>
-            <version>0.0.2-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
     <build>

@@ -2,7 +2,6 @@ package it.cnit.siteinventory.datashipper;
 
 import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.site.Site;
-import it.nextworks.nfvmano.catalogue.blueprint.elements.InfrastructureMetricType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +12,19 @@ import lombok.Data;
 @Entity
 @Data
 public class DataShipper {
+
+  @SuppressWarnings("unused")
+  public enum InfrastructureMetricType {
+    LOST_PKT,
+    RECEIVED_PKT,
+    SENT_PKT,
+    BANDWIDTH,
+    LATENCY,
+    JITTER,
+    CPU_CONSUMPTION,
+    MEMORY_CONSUMPTION,
+    OTHER
+  }
 
   @Id
   @GeneratedValue

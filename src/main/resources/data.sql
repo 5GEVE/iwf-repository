@@ -32,7 +32,7 @@ INSERT INTO availability_zone (latitude, location, longitude, name, vim_account_
 VALUES (45.062379, 'CLOUD', 7.662097, 'polito cloud zone',
         (SELECT id FROM vim_account WHERE vim_account_nfvo_id='77c531ef-ff08-42a3-aeb9-3b8eae19a32f'));
 INSERT INTO availability_zone (latitude, location, longitude, name, vim_account_id)
-VALUES (45.062207, 'EDGE', 7.678558, 'polito edge zone',
+VALUES (45.062207, 'EDGE', 7.678558, 'porta nuova edge zone',
         (SELECT id FROM vim_account WHERE vim_account_nfvo_id='e59a8dfd-dd21-42cc-98f7-a68c83cfbdbd'));
 
 -- notification_type initialization

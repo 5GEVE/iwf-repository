@@ -8,8 +8,17 @@ INSERT INTO site (name, location) VALUES ('GREECE_ATHENS', 'Athens, Greece');
 
 -- nfvos
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('Turin OSM @ Polito', 'OSM', 'R6', 'ENABLED',
-(SELECT id FROM site WHERE name='ITALY_TURIN'));
+VALUES ('osm-turin-cnit', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='ITALY_TURIN'));
+INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
+VALUES ('onap-nice', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_NICE'));
+INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
+VALUES ('onap-paris', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_PARIS'));
+INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
+VALUES ('onap-rennes', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_RENNES'));
+INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
+VALUES ('osm-madrid', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='SPAIN_5TONIC'));
+INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
+VALUES ('osm-athens-wings', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='GREECE_ATHENS'));
 
 -- vim
 INSERT INTO vim_account (name, tenant, type, uri, vim_account_nfvo_id)
@@ -22,10 +31,10 @@ VALUES ('Edge VIM Openstack', '5geve-edge', 'openstack',
 -- vim_nfvo
 INSERT INTO vim_nfvo (vim_id, nfvo_id) VALUES
 ((SELECT id FROM vim_account WHERE tenant='5geve-cloud'),
- (SELECT id FROM nfv_orchestrator WHERE name='Turin OSM @ Polito'));
+ (SELECT id FROM nfv_orchestrator WHERE name='osm-turin-cnit'));
 INSERT INTO vim_nfvo (vim_id, nfvo_id) VALUES
 ((SELECT id FROM vim_account WHERE tenant='5geve-edge'),
- (SELECT id FROM nfv_orchestrator WHERE name='Turin OSM @ Polito'));
+ (SELECT id FROM nfv_orchestrator WHERE name='osm-turin-cnit'));
 
 -- availability_zone
 INSERT INTO availability_zone (latitude, location, longitude, name, vim_account_id)

@@ -25,7 +25,7 @@ public class VimAccount {
 
   // This is the id used by the NVFO for this VIM account
   @NotNull
-  private UUID vimAccountId;
+  private UUID vimAccountNfvoId;
 
   @NotNull
   private String name;

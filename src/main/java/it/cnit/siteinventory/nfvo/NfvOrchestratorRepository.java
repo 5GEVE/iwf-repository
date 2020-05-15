@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @SuppressWarnings("unused")
-@RepositoryRestResource(collectionResourceRel = "nfvos", path = "nfvos")
+@RepositoryRestResource(collectionResourceRel = "nfvOrchestrators", path = "nfvOrchestrators")
 public interface NfvOrchestratorRepository extends
     PagingAndSortingRepository<NfvOrchestrator, Long> {
 

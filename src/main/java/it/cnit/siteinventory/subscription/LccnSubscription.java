@@ -29,5 +29,5 @@ public class LccnSubscription {
   private List<NotificationType> notificationTypes;
 
   @ManyToMany
-  private List<NfvOrchestrator> nfvos;
+  private List<NfvOrchestrator> nfvOrchestrators;
 }

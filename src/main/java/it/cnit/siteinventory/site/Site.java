@@ -27,10 +27,10 @@ public class Site {
   private String location;
 
   @OneToMany(mappedBy = "site")
-  private List<NfvOrchestrator> nfvos;
+  private List<NfvOrchestrator> nfvOrchestrators;
 
   @OneToMany(mappedBy = "site")
-  private List<RanOrchestrator> ranos;
+  private List<RanOrchestrator> ranOrchestrators;
 
   @OneToMany(mappedBy = "site")
   private List<DataShipper> dataShippers;

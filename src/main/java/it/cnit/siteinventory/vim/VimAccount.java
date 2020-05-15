@@ -44,6 +44,6 @@ public class VimAccount {
   @JoinTable(name = "vim_nfvo",
       joinColumns = @JoinColumn(name = "vim_id"),
       inverseJoinColumns = @JoinColumn(name = "nfvo_id"))
-  private List<NfvOrchestrator> nfvos;
+  private List<NfvOrchestrator> nfvOrchestrators;
 
 }

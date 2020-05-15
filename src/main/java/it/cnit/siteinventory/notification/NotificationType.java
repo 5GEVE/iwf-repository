@@ -31,5 +31,5 @@ public class NotificationType {
   private String type;
 
   @ManyToMany(mappedBy = "notificationTypes")
-  private List<LccnSubscription> lccnSubscriptions;
+  private List<LccnSubscription> subscriptions;
 }

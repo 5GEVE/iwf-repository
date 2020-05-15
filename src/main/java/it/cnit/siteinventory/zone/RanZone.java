@@ -38,7 +38,7 @@ public class RanZone {
   private String frequencies;
 
   @ManyToOne
-  private RanOrchestrator rano;
+  private RanOrchestrator ranOrchestrator;
 
   // TODO add more RAN capabilities
 }

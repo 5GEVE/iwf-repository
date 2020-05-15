@@ -56,10 +56,10 @@ public class NfvOrchestrator {
   @RestResource(exported = false)
   private Credentials credentials;
 
-  @ManyToMany(mappedBy = "nfvos")
+  @ManyToMany(mappedBy = "nfvOrchestrators")
   private List<VimAccount> vimAccounts;
 
-  @ManyToMany(mappedBy = "nfvos")
+  @ManyToMany(mappedBy = "nfvOrchestrators")
   private List<LccnSubscription> subscriptions;
 
   @ManyToOne

@@ -39,6 +39,6 @@ public class RanOrchestrator {
   @ManyToOne
   private Site site;
 
-  @OneToMany(mappedBy = "rano")
+  @OneToMany(mappedBy = "ranOrchestrator")
   private List<RanZone> ranZones;
 }

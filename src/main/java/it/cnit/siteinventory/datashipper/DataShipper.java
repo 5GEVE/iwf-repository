@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.datashipper;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.site.Site;
 import javax.persistence.Entity;
@@ -45,6 +46,7 @@ public class DataShipper {
 
   private String publicKey;
 
+  @ApiModelProperty(hidden = true)
   @ManyToOne
   private Site site;
 }

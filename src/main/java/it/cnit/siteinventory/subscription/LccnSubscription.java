@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.subscription;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.notification.NotificationType;
 import java.util.List;
@@ -25,9 +26,11 @@ public class LccnSubscription {
   @NotNull
   private String nsInstanceId;
 
+  @ApiModelProperty(hidden = true)
   @ManyToMany
   private List<NotificationType> notificationTypes;
 
+  @ApiModelProperty(hidden = true)
   @ManyToMany
   private List<NfvOrchestrator> nfvOrchestrators;
 }

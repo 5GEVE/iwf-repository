@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.rano;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.cred.Credentials;
 import it.cnit.siteinventory.site.Site;
 import it.cnit.siteinventory.zone.RanZone;
@@ -36,9 +37,11 @@ public class RanOrchestrator {
   @RestResource(exported = false)
   private Credentials credentials;
 
+  @ApiModelProperty(hidden = true)
   @ManyToOne
   private Site site;
 
+  @ApiModelProperty(hidden = true)
   @OneToMany(mappedBy = "ranOrchestrator")
   private List<RanZone> ranZones;
 }

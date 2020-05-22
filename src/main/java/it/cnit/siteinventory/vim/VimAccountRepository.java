@@ -11,5 +11,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface VimAccountRepository extends PagingAndSortingRepository<VimAccount, Long> {
 
   List<VimAccount> findByTypeIgnoreCase(@Param("type") String type);
+
   List<VimAccount> findByVimAccountNfvoId(@Param("uuid") UUID uuid);
 }

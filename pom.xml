@@ -10,7 +10,7 @@
     </parent>
     <groupId>it.cnit</groupId>
     <artifactId>site-inventory</artifactId>
-    <version>0.0.8</version>
+    <version>0.0.9</version>
     <name>site-inventory</name>
     <description>Simple REST API to manage 5G EVE site information</description>
 
@@ -89,6 +89,14 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>build-info</id>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

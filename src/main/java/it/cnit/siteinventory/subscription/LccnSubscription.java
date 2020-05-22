@@ -2,6 +2,7 @@ package it.cnit.siteinventory.subscription;
 
 import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -41,7 +42,8 @@ public class LccnSubscription {
   @ElementCollection
   @Enumerated(EnumType.STRING)
   @CollectionTable(name = "notification_type")
-  private Set<NotificationType> notificationTypes;
+  private Set<NotificationType> notificationTypes = Collections
+      .singleton(NotificationType.NsLcmOperationOccurenceNotification);
 
   @ApiModelProperty(hidden = true)
   @ManyToMany

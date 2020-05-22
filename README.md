@@ -20,8 +20,11 @@ curl --request GET --url http://127.0.0.1:8087/
 
 ## API documentation
 
-We can't generate OpenAPI documentation since `spring-data-rest` creates endpoints dynamically.
-You can graphically navigate the API with the [HAL Explorer](https://github.com/toedter/hal-explorer).
+You can get swagger documentation in JSON by visiting http://localhost:8087/v2/api-docs
+
+You can navigate the documentation by visiting http://127.0.0.1:8087/swagger-ui.html
+
+You can also graphically navigate the API with the [HAL Explorer](https://github.com/toedter/hal-explorer).
 Just visit http://127.0.0.1:8087/ from your browser.
 
 ## Add NFVO credentials

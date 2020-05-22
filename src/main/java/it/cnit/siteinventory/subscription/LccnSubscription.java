@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -35,7 +36,7 @@ public class LccnSubscription {
   private String callbackUri;
 
   @NotNull
-  private String nsInstanceId;
+  private UUID nsInstanceId;
 
   @ElementCollection
   @Enumerated(EnumType.STRING)

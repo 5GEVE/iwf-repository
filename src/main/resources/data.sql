@@ -42,7 +42,3 @@ VALUES (45.062379, 'CLOUD', 7.662097, 'polito cloud zone');
 INSERT INTO availability_zone (latitude, location, longitude, name)
 VALUES (45.062207, 'EDGE', 7.678558, 'porta nuova edge zone');
 
--- notification_type initialization
-INSERT INTO notification_type (type) VALUES ('NsLcmOperationOccurenceNotification');
-INSERT INTO notification_type (type) VALUES ('NsIdentifierCreationNotification');
-INSERT INTO notification_type (type) VALUES ('NsIdentifierDeletionNotification');

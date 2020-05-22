@@ -1,9 +1,10 @@
 package it.cnit.siteinventory.zone;
 
 import io.swagger.annotations.ApiModelProperty;
-import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.vim.VimAccount;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,8 +30,8 @@ public class AvailabilityZone {
   private String name;
 
   @NotNull
-  @ValueOfEnum(value = Location.class, enumStrings = {"CLOUD", "EDGE"})
-  private String location = Location.CLOUD.name();
+  @Enumerated(EnumType.STRING)
+  private Location location = Location.CLOUD;
 
   private double latitude;
 

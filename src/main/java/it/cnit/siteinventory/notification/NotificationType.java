@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.notification;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.subscription.LccnSubscription;
 import java.util.List;
@@ -30,6 +31,7 @@ public class NotificationType {
   @ValueOfEnum(NotificationTypeValue.class)
   private String type;
 
+  @ApiModelProperty(hidden = true)
   @ManyToMany(mappedBy = "notificationTypes")
   private List<LccnSubscription> subscriptions;
 }

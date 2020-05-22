@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.vim;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.zone.AvailabilityZone;
 import java.util.List;
@@ -37,9 +38,11 @@ public class VimAccount {
 
   private String tenant;
 
+  @ApiModelProperty(hidden = true)
   @OneToOne(mappedBy = "vimAccount")
   private AvailabilityZone availabilityZone;
 
+  @ApiModelProperty(hidden = true)
   @ManyToMany
   @JoinTable(name = "vim_nfvo",
       joinColumns = @JoinColumn(name = "vim_id"),

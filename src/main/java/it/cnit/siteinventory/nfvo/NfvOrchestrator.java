@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.nfvo;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.cred.Credentials;
 import it.cnit.siteinventory.site.Site;
@@ -56,12 +57,15 @@ public class NfvOrchestrator {
   @RestResource(exported = false)
   private Credentials credentials;
 
+  @ApiModelProperty(hidden = true)
   @ManyToMany(mappedBy = "nfvOrchestrators")
   private List<VimAccount> vimAccounts;
 
+  @ApiModelProperty(hidden = true)
   @ManyToMany(mappedBy = "nfvOrchestrators")
   private List<LccnSubscription> subscriptions;
 
+  @ApiModelProperty(hidden = true)
   @ManyToOne
   private Site site;
 }

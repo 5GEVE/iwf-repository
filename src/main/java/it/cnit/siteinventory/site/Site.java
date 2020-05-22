@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.site;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.datashipper.DataShipper;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.rano.RanOrchestrator;
@@ -26,12 +27,15 @@ public class Site {
   @NotNull
   private String location;
 
+  @ApiModelProperty(hidden = true)
   @OneToMany(mappedBy = "site")
   private List<NfvOrchestrator> nfvOrchestrators;
 
+  @ApiModelProperty(hidden = true)
   @OneToMany(mappedBy = "site")
   private List<RanOrchestrator> ranOrchestrators;
 
+  @ApiModelProperty(hidden = true)
   @OneToMany(mappedBy = "site")
   private List<DataShipper> dataShippers;
 }

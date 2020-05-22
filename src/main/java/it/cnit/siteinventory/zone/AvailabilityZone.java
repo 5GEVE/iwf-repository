@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.zone;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.vim.VimAccount;
 import javax.persistence.Entity;
@@ -35,6 +36,7 @@ public class AvailabilityZone {
 
   private double longitude;
 
+  @ApiModelProperty(hidden = true)
   @OneToOne
   private VimAccount vimAccount;
 }

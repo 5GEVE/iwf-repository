@@ -1,5 +1,6 @@
 package it.cnit.siteinventory.zone;
 
+import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.rano.RanOrchestrator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,6 +38,7 @@ public class RanZone {
   // comma-separated list of strings
   private String frequencies;
 
+  @ApiModelProperty(hidden = true)
   @ManyToOne
   private RanOrchestrator ranOrchestrator;
 

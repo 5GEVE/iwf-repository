@@ -2,8 +2,10 @@ package it.cnit.siteinventory.subscription;
 
 import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.nfvo.NfvOrchestrator;
-import it.cnit.siteinventory.notification.NotificationType;
 import java.util.List;
+import java.util.Set;
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +18,13 @@ import lombok.Data;
 @Data
 public class LccnSubscription {
 
+  @SuppressWarnings("unused")
+  public enum NotificationType {
+    NsLcmOperationOccurenceNotification,
+    NsIdentifierCreationNotification,
+    NsIdentifierDeletionNotification
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
@@ -26,9 +35,9 @@ public class LccnSubscription {
   @NotNull
   private String nsInstanceId;
 
-  @ApiModelProperty(hidden = true)
-  @ManyToMany
-  private List<NotificationType> notificationTypes;
+  @ElementCollection
+  @CollectionTable(name = "notification_type")
+  private Set<NotificationType> notificationTypes;
 
   @ApiModelProperty(hidden = true)
   @ManyToMany

@@ -24,7 +24,7 @@ public class LccnSubscription {
 
   @SuppressWarnings("unused")
   public enum NotificationType {
-    NsLcmOperationOccurenceNotification,
+    NsLcmOperationOccurrenceNotification,
     NsIdentifierCreationNotification,
     NsIdentifierDeletionNotification
   }
@@ -43,7 +43,7 @@ public class LccnSubscription {
   @Enumerated(EnumType.STRING)
   @CollectionTable(name = "notification_type")
   private Set<NotificationType> notificationTypes = Collections
-      .singleton(NotificationType.NsLcmOperationOccurenceNotification);
+      .singleton(NotificationType.NsLcmOperationOccurrenceNotification);
 
   @ApiModelProperty(hidden = true)
   @ManyToMany

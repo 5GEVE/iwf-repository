@@ -8,6 +8,7 @@ import it.cnit.siteinventory.vim.VimAccount;
 import java.sql.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -36,6 +37,7 @@ public class NfvOrchestrator {
   private long id;
 
   @NotNull
+  @Column(unique = true)
   private String name;
 
   @NotNull

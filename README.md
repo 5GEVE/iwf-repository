@@ -18,6 +18,14 @@ You can test the app with:
 curl --request GET --url http://127.0.0.1:8087/
 ```
 
+To uninstall, use:
+
+```shell script
+docker-compose down --remove-orphans --volumes
+```
+
+*Note: This will delete your database!*
+
 ## API documentation
 
 You can get swagger documentation in JSON by visiting http://localhost:8087/v2/api-docs

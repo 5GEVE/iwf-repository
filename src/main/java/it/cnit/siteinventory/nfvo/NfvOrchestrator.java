@@ -1,7 +1,6 @@
 package it.cnit.siteinventory.nfvo;
 
 import io.swagger.annotations.ApiModelProperty;
-import it.cnit.siteinventory.constraints.ValueOfEnum;
 import it.cnit.siteinventory.cred.Credentials;
 import it.cnit.siteinventory.site.Site;
 import it.cnit.siteinventory.subscription.LccnSubscription;
@@ -9,7 +8,10 @@ import it.cnit.siteinventory.vim.VimAccount;
 import java.sql.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,6 +37,7 @@ public class NfvOrchestrator {
   private long id;
 
   @NotNull
+  @Column(unique = true)
   private String name;
 
   @NotNull
@@ -44,8 +47,8 @@ public class NfvOrchestrator {
   private String version;
 
   @NotNull
-  @ValueOfEnum(OperationalState.class)
-  private String operationalState = OperationalState.ENABLED.name();
+  @Enumerated(EnumType.STRING)
+  private OperationalState operationalState = OperationalState.ENABLED;
 
   private String uri;
 

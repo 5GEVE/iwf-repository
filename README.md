@@ -30,4 +30,5 @@ Just visit http://127.0.0.1:8087/ from your browser.
 ## Add NFVO credentials
 
 Credentials to access NFVOs are not included in database initialization scripts.
-Edit and run [add-credentials.sh](add-credentials.sh) to add credentials for an existing NFVO.
+Edit and run [add-credentials.sh](scripts/add-credentials.sh) to add credentials for an existing NFVO.
+

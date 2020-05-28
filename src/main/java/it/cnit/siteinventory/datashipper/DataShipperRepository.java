@@ -11,6 +11,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface DataShipperRepository extends
     PagingAndSortingRepository<DataShipper, Long> {
 
-  List<DataShipper> findByMetricType(
-      @Param("metricType") InfrastructureMetricType metricType);
+  List<DataShipper> findByMetricType(@Param("metricType") InfrastructureMetricType metricType);
+
+  List<DataShipper> findByDataShipperId(@Param("dataShipperId") String dataShipperId);
 }

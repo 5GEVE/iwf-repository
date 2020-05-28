@@ -6,7 +6,7 @@ PORT=8087
 NFVO_ID=1
 
 curl --request PATCH \
-  --url http://${HOST}:${PORT}/nfvos/${NFVO_ID} \
+  --url http://${HOST}:${PORT}/nfvOrchestrators/${NFVO_ID} \
   --header 'content-type: application/json' \
   --data '{
 	"credentials": {

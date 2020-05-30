@@ -1,10 +1,10 @@
 -- eve sites
-INSERT INTO site (name, location) VALUES ('ITALY_TURIN', 'Turin, Italy');
-INSERT INTO site (name, location) VALUES ('SPAIN_5TONIC', 'Madrid, Spain');
-INSERT INTO site (name, location) VALUES ('FRANCE_PARIS', 'Paris, France');
-INSERT INTO site (name, location) VALUES ('FRANCE_NICE', 'Nice, France');
-INSERT INTO site (name, location) VALUES ('FRANCE_RENNES', 'Rennes, France');
-INSERT INTO site (name, location) VALUES ('GREECE_ATHENS', 'Athens, Greece');
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('ITALY_TURIN', 'Turin, Italy', '10.0.0.1');
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('SPAIN_5TONIC', 'Madrid, Spain', '10.0.0.2');
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('FRANCE_PARIS', 'Paris, France', '10.0.0.3');
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('FRANCE_NICE', 'Nice, France', '10.0.0.4');
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('FRANCE_RENNES', 'Rennes, France', '10.0.0.5');
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('GREECE_ATHENS', 'Athens, Greece', '10.0.0.6');
 
 -- nfvos
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)

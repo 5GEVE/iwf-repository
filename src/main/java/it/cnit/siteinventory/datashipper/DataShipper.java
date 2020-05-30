@@ -31,12 +31,6 @@ public class DataShipper {
     OTHER
   }
 
-  @SuppressWarnings("unused")
-  public enum ConfigAccess {
-    SCRIPT,
-    REST
-  }
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
@@ -56,18 +50,10 @@ public class DataShipper {
   private String password;
 
   @NotNull
-  private String configStart;
+  private String configurationScript;
 
   @NotNull
-  private String configStop;
-
-  @NotNull
-  private String configReset;
-
-  @Enumerated(EnumType.STRING)
-  private ConfigAccess method;
-
-  private String deviceId;
+  private String stopConfigScript;
 
   @Enumerated(EnumType.STRING)
   private InfrastructureMetricType metricType;

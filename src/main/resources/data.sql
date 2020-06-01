@@ -54,3 +54,13 @@ VALUES (45.062379, 'CLOUD', 7.662097, 'polito cloud zone');
 INSERT INTO availability_zone (latitude, location, longitude, name)
 VALUES (45.062207, 'EDGE', 7.678558, 'porta nuova edge zone');
 
+-- network
+INSERT INTO network (vim_network_name, floating_ip, management, site_id, cidr)
+VALUES ('floating', true, false, (SELECT id FROM site WHERE name='ITALY_TURIN'), '10.50.160.0/22');
+INSERT INTO network (vim_network_name, floating_ip, management, site_id, cidr)
+VALUES ('vm_mgmt', false, true, (SELECT id FROM site WHERE name='ITALY_TURIN'), '10.50.80.0/22');
+INSERT INTO network (vim_network_name, floating_ip, management, site_id)
+VALUES ('provider', false, true, (SELECT id FROM site WHERE name='SPAIN_5TONIC'));
+INSERT INTO network (vim_network_name, floating_ip, management, site_id)
+VALUES ('provider2', false, false, (SELECT id FROM site WHERE name='SPAIN_5TONIC'));
+

@@ -2,17 +2,23 @@ package it.cnit.siteinventory.network;
 
 import io.swagger.annotations.ApiModelProperty;
 import it.cnit.siteinventory.site.Site;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import lombok.Data;
 
 @Entity
 @Data
+@Table(uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"vim_network_name", "site_id"})
+})
 public class Network {
 
   @Id
@@ -20,6 +26,7 @@ public class Network {
   private long id;
 
   @NotNull
+  @Column(name = "vim_network_name")
   private String vimNetworkName;
 
   @NotNull

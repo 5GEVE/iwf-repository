@@ -37,7 +37,7 @@ Just visit http://127.0.0.1:8087/ from your browser.
 
 ## Scripts to add data
 
-[scripts] folder contains some scripts to add data via `curl`.
+[scripts](scripts) folder contains some scripts to add data via `curl`.
 
 For example, credentials to access NFVOs are not included in database initialization scripts.
 Edit and run [add-credentials.sh](scripts/add-credentials.sh) to add credentials for an existing NFVO.

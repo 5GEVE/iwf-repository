@@ -21,3 +21,4 @@ buildNumber.properties
 /.attach_pid*
 
 /mvn-release.sh
+/mvn-fix.sh

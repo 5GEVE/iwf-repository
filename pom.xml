@@ -10,7 +10,7 @@
     </parent>
     <groupId>it.cnit</groupId>
     <artifactId>site-inventory</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2-SNAPSHOT</version>
     <name>site-inventory</name>
     <description>Simple REST API to manage 5G EVE site information</description>
 

@@ -50,9 +50,11 @@ public class DataShipper {
   private String password;
 
   @NotNull
+  @Column(columnDefinition="TEXT")
   private String configurationScript;
 
   @NotNull
+  @Column(columnDefinition="TEXT")
   private String stopConfigScript;
 
   @Enumerated(EnumType.STRING)

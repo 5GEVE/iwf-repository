@@ -1,7 +1,7 @@
 -- eve sites
-INSERT INTO site (name, location, kafka_ip_address) VALUES ('ITALY_TURIN', 'Turin, Italy', '10.0.0.1')
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('ITALY_TURIN', 'Turin, Italy', '10.50.80.18')
 ON CONFLICT (name) DO NOTHING;
-INSERT INTO site (name, location, kafka_ip_address) VALUES ('SPAIN_5TONIC', 'Madrid, Spain', '10.0.0.2')
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('SPAIN_5TONIC', 'Madrid, Spain', '10.3.5.100')
 ON CONFLICT (name) DO NOTHING;
 INSERT INTO site (name, location, kafka_ip_address) VALUES ('FRANCE_PARIS', 'Paris, France', '10.0.0.3')
 ON CONFLICT (name) DO NOTHING;

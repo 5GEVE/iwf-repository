@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import javax.persistence.CollectionTable;
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -37,6 +38,7 @@ public class LccnSubscription {
   private String callbackUri;
 
   @NotNull
+  @Column(unique = true)
   private UUID nsInstanceId;
 
   @ElementCollection

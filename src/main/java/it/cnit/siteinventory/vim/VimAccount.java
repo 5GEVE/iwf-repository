@@ -5,6 +5,7 @@ import it.cnit.siteinventory.nfvo.NfvOrchestrator;
 import it.cnit.siteinventory.zone.AvailabilityZone;
 import java.util.List;
 import java.util.UUID;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,7 @@ public class VimAccount {
 
   // This is the id used by the NVFO for this VIM account
   @NotNull
+  @Column(unique = true)
   private UUID vimAccountNfvoId;
 
   @NotNull

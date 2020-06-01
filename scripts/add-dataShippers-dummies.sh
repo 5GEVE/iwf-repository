@@ -5,7 +5,7 @@
 HOST=localhost
 PORT=8087
 SITE_ID=1 # Italy default
-N=15 # Number of shippers to be generated
+N=5 # Number of shippers to be generated
 
 generate_post_data()
 {
@@ -15,11 +15,8 @@ generate_post_data()
   "ipAddress": "$(printf "%d.%d.%d.%d\n" "$((RANDOM % 256))" "$((RANDOM % 256))" "$((RANDOM % 256))" "$((RANDOM % 256))")",
   "username": "root",
   "password": "password",
-  "configStart": "START",
-  "configStop": "STOP",
-  "configReset":"RESET",
-  "method": "SCRIPT",
-  "deviceId": "topic/device/kafka",
+  "configurationScript": "SCRIPT",
+  "stopConfigScript": "SCRIPT",
   "metricType": "CPU_CONSUMPTION"
 }
 EOF

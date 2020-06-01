@@ -1,24 +1,36 @@
 -- eve sites
-INSERT INTO site (name, location) VALUES ('ITALY_TURIN', 'Turin, Italy');
-INSERT INTO site (name, location) VALUES ('SPAIN_5TONIC', 'Madrid, Spain');
-INSERT INTO site (name, location) VALUES ('FRANCE_PARIS', 'Paris, France');
-INSERT INTO site (name, location) VALUES ('FRANCE_NICE', 'Nice, France');
-INSERT INTO site (name, location) VALUES ('FRANCE_RENNES', 'Rennes, France');
-INSERT INTO site (name, location) VALUES ('GREECE_ATHENS', 'Athens, Greece');
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('ITALY_TURIN', 'Turin, Italy', '10.50.80.18')
+ON CONFLICT (name) DO NOTHING;
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('SPAIN_5TONIC', 'Madrid, Spain', '10.3.5.100')
+ON CONFLICT (name) DO NOTHING;
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('FRANCE_PARIS', 'Paris, France', '10.0.0.3')
+ON CONFLICT (name) DO NOTHING;
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('FRANCE_NICE', 'Nice, France', '10.0.0.4')
+ON CONFLICT (name) DO NOTHING;
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('FRANCE_RENNES', 'Rennes, France', '10.0.0.5')
+ON CONFLICT (name) DO NOTHING;
+INSERT INTO site (name, location, kafka_ip_address) VALUES ('GREECE_ATHENS', 'Athens, Greece', '10.0.0.6')
+ON CONFLICT (name) DO NOTHING;
 
 -- nfvos
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('osm-turin-cnit', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='ITALY_TURIN'));
+VALUES ('osm-turin-cnit', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='ITALY_TURIN'))
+ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('onap-nice', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_NICE'));
+VALUES ('onap-nice', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_NICE'))
+ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('onap-paris', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_PARIS'));
+VALUES ('onap-paris', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_PARIS'))
+ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('onap-rennes', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_RENNES'));
+VALUES ('onap-rennes', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_RENNES'))
+ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('osm-madrid', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='SPAIN_5TONIC'));
+VALUES ('osm-madrid', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='SPAIN_5TONIC'))
+ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('osm-athens-wings', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='GREECE_ATHENS'));
+VALUES ('osm-athens-wings', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='GREECE_ATHENS'))
+ON CONFLICT (name) DO NOTHING;
 
 -- vim accounts. Keeping this as a reference. Should be added dynamically.
 -- INSERT INTO vim_account (name, tenant, type, uri, vim_account_nfvo_id)

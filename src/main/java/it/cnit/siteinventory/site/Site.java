@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import lombok.Data;
 
 @Entity
@@ -28,6 +29,11 @@ public class Site {
 
   @NotNull
   private String location;
+
+  @NotNull
+  @Pattern(regexp = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",
+      message = "must be a valid IPv4 address")
+  private String kafkaIpAddress;
 
   @ApiModelProperty(hidden = true)
   @OneToMany(mappedBy = "site")

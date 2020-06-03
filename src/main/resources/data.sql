@@ -49,16 +49,16 @@ ON CONFLICT (name) DO NOTHING;
 --  (SELECT id FROM nfv_orchestrator WHERE name='osm-turin-cnit'));
 
 -- network
-INSERT INTO network (vim_network_name, floating_ip, management, site_id, cidr)
-VALUES ('floating', true, false, (SELECT id FROM site WHERE name='ITALY_TURIN'), '10.50.160.0/22')
+INSERT INTO network (vim_network_name, floating_ip, mgmt_net, external_net, site_id, cidr)
+VALUES ('floating', true, false, true, (SELECT id FROM site WHERE name='ITALY_TURIN'), '10.50.160.0/22')
 ON CONFLICT (vim_network_name, site_id) DO NOTHING;
-INSERT INTO network (vim_network_name, floating_ip, management, site_id, cidr)
-VALUES ('vm_mgmt', false, true, (SELECT id FROM site WHERE name='ITALY_TURIN'), '10.50.80.0/22')
+INSERT INTO network (vim_network_name, floating_ip, mgmt_net, external_net, site_id, cidr)
+VALUES ('vm_mgmt', false, true, false, (SELECT id FROM site WHERE name='ITALY_TURIN'), '10.50.80.0/22')
 ON CONFLICT (vim_network_name, site_id) DO NOTHING;
-INSERT INTO network (vim_network_name, floating_ip, management, site_id)
-VALUES ('provider', false, true, (SELECT id FROM site WHERE name='SPAIN_5TONIC'))
+INSERT INTO network (vim_network_name, floating_ip, mgmt_net, external_net, site_id)
+VALUES ('provider', false, true, false, (SELECT id FROM site WHERE name='SPAIN_5TONIC'))
 ON CONFLICT (vim_network_name, site_id) DO NOTHING;
-INSERT INTO network (vim_network_name, floating_ip, management, site_id)
-VALUES ('provider2', false, false, (SELECT id FROM site WHERE name='SPAIN_5TONIC'))
+INSERT INTO network (vim_network_name, floating_ip, mgmt_net, external_net, site_id)
+VALUES ('provider2', false, false, true, (SELECT id FROM site WHERE name='SPAIN_5TONIC'))
 ON CONFLICT (vim_network_name, site_id) DO NOTHING;
 

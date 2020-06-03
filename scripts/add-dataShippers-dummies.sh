@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # This needs jq, uuidgen (from e2fsprogs)
+# Remember to escape the dollar sign, the backticks (backward single quotes, ``) and the backslash
+# in generate_post_data()!.
 
 HOST=localhost
 PORT=8087

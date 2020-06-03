@@ -27,13 +27,16 @@ public class Network {
 
   @NotNull
   @Column(name = "vim_network_name")
-  private String vimNetworkName;
+  private String vim_network_name;
 
   @NotNull
-  private boolean floatingIp;
+  private boolean floating_ip;
 
   @NotNull
-  private boolean management;
+  private boolean mgmt_net;
+
+  @NotNull
+  private boolean external_net;
 
   @Pattern(regexp = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/(\\d|[1-2]\\d|3[0-2]))$",
       message = "must be a valid IPv4 address range (ex. 192.168.1.0/24)")

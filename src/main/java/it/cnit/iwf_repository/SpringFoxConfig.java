@@ -26,8 +26,8 @@ public class SpringFoxConfig {
   @Bean
   public Docket api() {
     ApiInfo apiInfo = new ApiInfo(
-        "Site Inventory API",
-        "A storage component to store sites information in 5G EVE project",
+        "IWF Repository API",
+        "Simple REST API to manage 5G EVE site information (formerly site-inventory)",
         buildProperties.getVersion(),
         "",
         null,

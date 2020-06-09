@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>it.cnit</groupId>
-    <artifactId>site-inventory</artifactId>
+    <artifactId>iwf-repository</artifactId>
     <version>0.1.3-SNAPSHOT</version>
-    <name>site-inventory</name>
-    <description>Simple REST API to manage 5G EVE site information</description>
+    <name>iwf-repository</name>
+    <description>Simple REST API to manage 5G EVE site information (formerly site-inventory)</description>
 
     <properties>
         <java.version>1.8</java.version>

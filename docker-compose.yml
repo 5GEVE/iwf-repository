@@ -1,27 +1,27 @@
 version: '3.7'
 services:
-  site-inventory-app:
+  iwf-repository-app:
     build:
       context: .
-    container_name: site-inventory-app
+    container_name: iwf-repository-app
     depends_on:
-      - site-inventory-db
+      - iwf-repository-db
     networks:
-      site-inventory-net:
+      iwf-repository-net:
         aliases:
-          - site-inventory-app
+          - iwf-repository-app
     ports:
       - 8087:8087
-  site-inventory-db:
+  iwf-repository-db:
     image: postgres:12-alpine
-    container_name: site-inventory-db
+    container_name: iwf-repository-db
     environment:
-      POSTGRES_USER: siteinventory
-      POSTGRES_PASSWORD: siteinventory
+      POSTGRES_USER: iwf-repository
+      POSTGRES_PASSWORD: iwf-repository
     networks:
-      site-inventory-net:
+      iwf-repository-net:
         aliases:
-          - site-inventory-db
+          - iwf-repository-db
 networks:
-  site-inventory-net:
+  iwf-repository-net:
 

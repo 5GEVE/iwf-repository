@@ -47,7 +47,7 @@ Edit and run [add-credentials.sh](scripts/add-credentials.sh) to add credentials
 Run a postgresql database on your localhost. You can do this manually or with docker:
 
 ```shell script
-docker run -p 5432:5432 --name iwf-repository-db -e POSTGRES_USER=iwf-repository -e POSTGRES_PASSWORD=iwf-repository -d postgres:12-alpine
+docker run -p 5432:5432 --name iwf-repository-db-dev -e POSTGRES_USER=iwf-repository -e POSTGRES_PASSWORD=iwf-repository -d postgres:12-alpine
 ```
 
 As you can see from the command above, set a user and password with value `iwf-repository`.

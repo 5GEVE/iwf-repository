@@ -1,5 +1,5 @@
-# site-inventory
-A REST service to store and retrieve information about trial sites and their resources.
+# IWF Repository
+Simple REST API to manage 5G EVE site information (formerly site-inventory)
 
 ## Install
 
@@ -47,10 +47,10 @@ Edit and run [add-credentials.sh](scripts/add-credentials.sh) to add credentials
 Run a postgresql database on your localhost. You can do this manually or with docker:
 
 ```shell script
-docker run -p 5432:5432 --name siteinventory-postgres -e POSTGRES_USER=siteinventory -e POSTGRES_PASSWORD=siteinventory -d postgres:12-alpine
+docker run -p 5432:5432 --name iwf-repository-db -e POSTGRES_USER=iwf-repository -e POSTGRES_PASSWORD=iwf-repository -d postgres:12-alpine
 ```
 
-As you can see from the command above, set a user and password with value `siteinventory`.
+As you can see from the command above, set a user and password with value `iwf-repository`.
 
 *Note: database is created and destroyed every time you restart the app.*
 
@@ -66,5 +66,5 @@ switch to Java 8 in your environment.
 To run:
 
 ```shell script
-$ java -Dspring.profiles.active=dev -jar target/site-inventory-<VERSION>.jar
+$ java -Dspring.profiles.active=dev -jar target/iwf-repository-<VERSION>.jar
 ```

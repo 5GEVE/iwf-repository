@@ -31,6 +31,9 @@ ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
 VALUES ('osm-athens-wings', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='GREECE_ATHENS'))
 ON CONFLICT (name) DO NOTHING;
+INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
+VALUES ('italian_ever', 'EVER', '', 'ENABLED', (SELECT id FROM site WHERE name='ITALY_TURIN'))
+ON CONFLICT (name) DO NOTHING;
 
 -- vim accounts. Keeping this as a reference. Should be added dynamically.
 -- INSERT INTO vim_account (name, tenant, type, uri, vim_account_nfvo_id)

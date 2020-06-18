@@ -14,7 +14,7 @@ ON CONFLICT (name) DO NOTHING;
 
 -- nfvos
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('osm-turin-cnit', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='ITALY_TURIN'))
+VALUES ('ITALY_TURIN', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='ITALY_TURIN'))
 ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
 VALUES ('onap-nice', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_NICE'))

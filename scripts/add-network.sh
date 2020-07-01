@@ -8,11 +8,11 @@ SITES_LINK=$(curl --request POST \
   --url http://${HOST}:${PORT}/networks \
   --header 'content-type: application/json' \
   --data '{
-	"vim_network_name": "external_gre",
-	"management": true,
-	"floating_ip": true,
-	"external_net": false,
-	"cidr": "192.168.20.0/24"
+  "vim_network_name" : "external",
+  "floating_ip" : false,
+  "mgmt_net" : true,
+  "external_net" : true,
+  "cidr" : "10.20.20.0/24",
 }' | jq -r ._links.site.href);
 
 curl --request PUT \

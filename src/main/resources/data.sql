@@ -29,7 +29,7 @@ INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
 VALUES ('osm-madrid', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='SPAIN_5TONIC'))
 ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
-VALUES ('osm-athens-wings', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='GREECE_ATHENS'))
+VALUES ('GREECE_ATHENS', 'OSM', 'R6', 'ENABLED', (SELECT id FROM site WHERE name='GREECE_ATHENS'))
 ON CONFLICT (name) DO NOTHING;
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
 VALUES ('italian_ever', 'EVER', '', 'ENABLED', (SELECT id FROM site WHERE name='ITALY_TURIN'))

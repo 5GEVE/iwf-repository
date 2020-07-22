@@ -38,6 +38,7 @@ public class DataShipper {
   private long id;
 
   @Column(unique = true)
+  @ApiModelProperty(notes = "Auto generated. Ignored in POST/PATCH/PUT.")
   private String dataShipperId;
 
   @PrePersist

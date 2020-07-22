@@ -37,6 +37,10 @@ public class DataShipper {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
+  /* TODO
+  If we have a unique metric_id (additional property) we can keep the unique constraint.
+  Instead, if we only have <site>.<metricId> we must remove the unique constraint.
+   */
   @Column(unique = true)
   @ApiModelProperty(notes = "Auto generated. Ignored in POST/PATCH/PUT.")
   private String dataShipperId;

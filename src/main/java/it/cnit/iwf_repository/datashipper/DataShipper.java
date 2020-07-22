@@ -40,6 +40,18 @@ public class DataShipper {
   @Column(unique = true)
   private String dataShipperId;
 
+  @PrePersist
+  @PreUpdate
+  private void updateDataShipperId() {
+    String siteName;
+    if (this.site == null) {
+      siteName = "<no_site>";
+    } else {
+      siteName = this.site.getName();
+    }
+    this.dataShipperId = String.join(".", siteName, this.metricType.name(), "custom_id");
+  }
+
   @NotNull
   @Pattern(regexp = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",
       message = "must be a valid IPv4 address")
@@ -64,16 +76,4 @@ public class DataShipper {
   @ApiModelProperty(hidden = true)
   @ManyToOne
   private Site site;
-
-  @PrePersist
-  @PreUpdate
-  private void updateDataShipperId() {
-    String siteName;
-    if (this.site == null) {
-      siteName = "<no_site>";
-    } else {
-      siteName = this.site.getName();
-    }
-    this.dataShipperId = String.join(".", siteName, this.metricType.name(), "custom_id");
-  }
 }

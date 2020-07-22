@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import lombok.Data;
@@ -35,7 +37,6 @@ public class DataShipper {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
 
-  @NotNull
   @Column(unique = true)
   private String dataShipperId;
 
@@ -50,11 +51,11 @@ public class DataShipper {
   private String password;
 
   @NotNull
-  @Column(columnDefinition="TEXT")
+  @Column(columnDefinition = "TEXT")
   private String configurationScript;
 
   @NotNull
-  @Column(columnDefinition="TEXT")
+  @Column(columnDefinition = "TEXT")
   private String stopConfigScript;
 
   @Enumerated(EnumType.STRING)
@@ -63,4 +64,16 @@ public class DataShipper {
   @ApiModelProperty(hidden = true)
   @ManyToOne
   private Site site;
+
+  @PrePersist
+  @PreUpdate
+  private void updateDataShipperId() {
+    String siteName;
+    if (this.site == null) {
+      siteName = "<no_site>";
+    } else {
+      siteName = this.site.getName();
+    }
+    this.dataShipperId = String.join(".", siteName, this.metricType.name(), "custom_id");
+  }
 }

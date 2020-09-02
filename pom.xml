@@ -10,7 +10,7 @@
     </parent>
     <groupId>it.cnit</groupId>
     <artifactId>iwf-repository</artifactId>
-    <version>0.1.5-SNAPSHOT</version>
+    <version>0.1.5</version>
     <name>iwf-repository</name>
     <description>Simple REST API to manage 5G EVE site information (formerly site-inventory)</description>
 

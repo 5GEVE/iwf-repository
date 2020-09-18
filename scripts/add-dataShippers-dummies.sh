@@ -19,7 +19,7 @@ generate_post_data()
   "password": "password",
   "configurationScript": "SCRIPT",
   "stopConfigScript": "SCRIPT",
-  "metricType": "CPU_CONSUMPTION"
+  "metricType": "USER_DATA_RATE_DOWNLINK"
 }
 EOF
 }

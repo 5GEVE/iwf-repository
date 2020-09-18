@@ -20,15 +20,13 @@ public class DataShipper {
 
   @SuppressWarnings("unused")
   public enum InfrastructureMetricType {
-    LOST_PKT,
-    RECEIVED_PKT,
-    SENT_PKT,
-    BANDWIDTH,
-    LATENCY,
-    JITTER,
-    CPU_CONSUMPTION,
-    MEMORY_CONSUMPTION,
-    OTHER
+    USER_DATA_RATE_DOWNLINK,
+    USER_DATA_RATE_UPLINK,
+    CAPACITY,
+    LATENCY_USERPLANE,
+    LATENCY_CONTROLPLANE,
+    DEVICE_DENSITY,
+    MOBILITY
   }
 
   @Id

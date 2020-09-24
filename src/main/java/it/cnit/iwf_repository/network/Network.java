@@ -38,9 +38,16 @@ public class Network {
   @NotNull
   private boolean external_net;
 
+  @NotNull
   @Pattern(regexp = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/(\\d|[1-2]\\d|3[0-2]))$",
       message = "must be a valid IPv4 address range (ex. 192.168.1.0/24)")
+  @ApiModelProperty(value = "The address space for the network", example = "192.168.1.0/24")
   private String cidr;
+
+  @Pattern(regexp = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(/(\\d|[1-2]\\d|3[0-2]))$",
+      message = "must be a valid IPv4 address range (ex. 172.17.40.0/24)")
+  @ApiModelProperty(value = "The address space to map this network to", example = "172.17.40.0/24")
+  private String ip_mapping;
 
   @ApiModelProperty(hidden = true)
   @ManyToOne

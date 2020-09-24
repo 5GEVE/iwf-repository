@@ -61,5 +61,5 @@ INSERT INTO network (vim_network_name, floating_ip, mgmt_net, external_net, site
 VALUES ('vm_mgmt', false, true, false, (SELECT id FROM site WHERE name='ITALY_TURIN'), '10.50.80.0/24')
 ON CONFLICT (vim_network_name, site_id) DO NOTHING;
 INSERT INTO network (vim_network_name, floating_ip, mgmt_net, external_net, site_id, cidr, ip_mapping)
-VALUES ('management', false, true, false, (SELECT id FROM site WHERE name='SPAIN_5TONIC'), '10.20.5.0/24', '172.17.254.0/24')
+VALUES ('provider', false, true, false, (SELECT id FROM site WHERE name='SPAIN_5TONIC'), '10.20.5.0/24', '172.17.254.0/24')
 ON CONFLICT (vim_network_name, site_id) DO NOTHING;

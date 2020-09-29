@@ -1,5 +1,5 @@
 # IWF Repository
-Simple REST API to manage 5G EVE site information (formerly site-inventory)
+REST API module to manage 5G EVE site information (formerly site-inventory)
 
 ## Install
 

@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.nfvo;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.cred.Credentials;
 import it.cnit.iwf_repository.site.Site;
 import it.cnit.iwf_repository.subscription.LccnSubscription;
@@ -60,15 +60,15 @@ public class NfvOrchestrator {
   @RestResource(exported = false)
   private Credentials credentials;
 
-  @ApiModelProperty(hidden = true)
+  @Hidden
   @ManyToMany(mappedBy = "nfvOrchestrators")
   private List<VimAccount> vimAccounts;
 
-  @ApiModelProperty(hidden = true)
+  @Hidden
   @ManyToMany(mappedBy = "nfvOrchestrators")
   private List<LccnSubscription> subscriptions;
 
-  @ApiModelProperty(hidden = true)
+  @Hidden
   @ManyToOne
   private Site site;
 }

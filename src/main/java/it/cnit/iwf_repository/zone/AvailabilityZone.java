@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.zone;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.vim.VimAccount;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -37,7 +37,7 @@ public class AvailabilityZone {
 
   private double longitude;
 
-  @ApiModelProperty(hidden = true)
+  @Hidden
   @OneToOne
   private VimAccount vimAccount;
 }

@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.datashipper;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.site.Site;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -48,17 +48,17 @@ public class DataShipper {
   private String password;
 
   @NotNull
-  @Column(columnDefinition="TEXT")
+  @Column(columnDefinition = "TEXT")
   private String configurationScript;
 
   @NotNull
-  @Column(columnDefinition="TEXT")
+  @Column(columnDefinition = "TEXT")
   private String stopConfigScript;
 
   @Enumerated(EnumType.STRING)
   private InfrastructureMetricType metricType;
 
-  @ApiModelProperty(hidden = true)
+  @Hidden
   @ManyToOne
   private Site site;
 }

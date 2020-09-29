@@ -1,5 +1,6 @@
 package it.cnit.iwf_repository.zone;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import it.cnit.iwf_repository.vim.VimAccount;
 import javax.persistence.Entity;
@@ -37,7 +38,7 @@ public class AvailabilityZone {
 
   private double longitude;
 
-  @Schema(hidden = true)
+  @Hidden
   @OneToOne
   private VimAccount vimAccount;
 }

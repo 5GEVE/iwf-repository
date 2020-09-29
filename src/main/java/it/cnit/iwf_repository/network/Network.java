@@ -1,5 +1,6 @@
 package it.cnit.iwf_repository.network;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import it.cnit.iwf_repository.site.Site;
 import javax.persistence.Column;
@@ -49,7 +50,7 @@ public class Network {
   @Schema(description = "The address space to map this network to", example = "172.17.40.0/24")
   private String ip_mapping;
 
-  @Schema(hidden = true)
+  @Hidden
   @ManyToOne
   private Site site;
 }

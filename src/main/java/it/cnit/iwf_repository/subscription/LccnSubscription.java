@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.subscription;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.nfvo.NfvOrchestrator;
 import java.util.Collections;
 import java.util.List;
@@ -47,7 +47,7 @@ public class LccnSubscription {
   private Set<NotificationType> notificationTypes = Collections
       .singleton(NotificationType.NsLcmOperationOccurrenceNotification);
 
-  @Schema(hidden = true)
+  @Hidden
   @ManyToMany
   private List<NfvOrchestrator> nfvOrchestrators;
 }

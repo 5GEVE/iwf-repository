@@ -1,5 +1,6 @@
 package it.cnit.iwf_repository.nfvo;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.media.Schema;
 import it.cnit.iwf_repository.cred.Credentials;
 import it.cnit.iwf_repository.site.Site;
@@ -60,15 +61,15 @@ public class NfvOrchestrator {
   @RestResource(exported = false)
   private Credentials credentials;
 
-  @Schema(hidden = true)
+  @Hidden
   @ManyToMany(mappedBy = "nfvOrchestrators")
   private List<VimAccount> vimAccounts;
 
-  @Schema(hidden = true)
+  @Hidden
   @ManyToMany(mappedBy = "nfvOrchestrators")
   private List<LccnSubscription> subscriptions;
 
-  @Schema(hidden = true)
+  @Hidden
   @ManyToOne
   private Site site;
 }

@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.rano;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.cred.Credentials;
 import it.cnit.iwf_repository.site.Site;
 import it.cnit.iwf_repository.zone.RanZone;
@@ -39,11 +39,11 @@ public class RanOrchestrator {
   @RestResource(exported = false)
   private Credentials credentials;
 
-  @Schema(hidden = true)
+  @Hidden
   @ManyToOne
   private Site site;
 
-  @Schema(hidden = true)
+  @Hidden
   @OneToMany(mappedBy = "ranOrchestrator")
   private List<RanZone> ranZones;
 }

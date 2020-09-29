@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.site;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.datashipper.DataShipper;
 import it.cnit.iwf_repository.network.Network;
 import it.cnit.iwf_repository.nfvo.NfvOrchestrator;
@@ -36,19 +36,19 @@ public class Site {
       message = "must be a valid IPv4 address")
   private String kafkaIpAddress;
 
-  @Schema(hidden = true)
+  @Hidden
   @OneToMany(mappedBy = "site")
   private List<NfvOrchestrator> nfvOrchestrators;
 
-  @Schema(hidden = true)
+  @Hidden
   @OneToMany(mappedBy = "site")
   private List<RanOrchestrator> ranOrchestrators;
 
-  @Schema(hidden = true)
+  @Hidden
   @OneToMany(mappedBy = "site")
   private List<DataShipper> dataShippers;
 
-  @Schema(hidden = true)
+  @Hidden
   @OneToMany(mappedBy = "site")
   private List<Network> networks;
 }

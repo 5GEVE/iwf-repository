@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.datashipper;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.site.Site;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -58,7 +58,7 @@ public class DataShipper {
   @Enumerated(EnumType.STRING)
   private InfrastructureMetricType metricType;
 
-  @Schema(hidden = true)
+  @Hidden
   @ManyToOne
   private Site site;
 }

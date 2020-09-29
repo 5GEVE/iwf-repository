@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.zone;
 
-import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.rano.RanOrchestrator;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,7 +38,7 @@ public class RanZone {
   // comma-separated list of strings
   private String frequencies;
 
-  @Schema(hidden = true)
+  @Hidden
   @ManyToOne
   private RanOrchestrator ranOrchestrator;
 

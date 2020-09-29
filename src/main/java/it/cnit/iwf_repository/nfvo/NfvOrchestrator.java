@@ -1,7 +1,6 @@
 package it.cnit.iwf_repository.nfvo;
 
 import io.swagger.v3.oas.annotations.Hidden;
-import io.swagger.v3.oas.annotations.media.Schema;
 import it.cnit.iwf_repository.cred.Credentials;
 import it.cnit.iwf_repository.site.Site;
 import it.cnit.iwf_repository.subscription.LccnSubscription;

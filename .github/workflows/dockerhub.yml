@@ -2,11 +2,11 @@ name: Build and push Docker images
 
 on:
   push:
-    branches: [master, development]
+    branches: [ master, development ]
   pull_request:
-    branches: [master, development]
+    branches: [ master, development ]
   release:
-    types: [published]
+    types: [ published ]
 
 jobs:
   buildpush:

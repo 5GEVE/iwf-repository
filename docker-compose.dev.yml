@@ -1,7 +1,8 @@
 version: '3.7'
 services:
   iwf-repository-app:
-    image: 5geve/iwf-repository
+    build:
+      context: .
     depends_on:
       - iwf-repository-db
     networks:

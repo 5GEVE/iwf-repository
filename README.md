@@ -1,5 +1,5 @@
 # IWF Repository
-Simple REST API to manage 5G EVE site information (formerly site-inventory)
+REST API module to manage 5G EVE site information (formerly site-inventory)
 
 ## Install
 
@@ -26,11 +26,11 @@ docker-compose down --remove-orphans --volumes
 
 *Note: This will delete your database!*
 
-## API documentation
+## OpenAPI documentation
 
-You can get swagger documentation in JSON by visiting http://localhost:8087/v2/api-docs
+You can navigate the documentation by visiting http://localhost:8087/swagger-ui.html
 
-You can navigate the documentation by visiting http://127.0.0.1:8087/swagger-ui.html
+You can get OpenAPI documentation in JSON by visiting http://localhost:8087/api-docs
 
 You can also graphically navigate the API with the [HAL Explorer](https://github.com/toedter/hal-explorer).
 Just visit http://127.0.0.1:8087/ from your browser.

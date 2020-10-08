@@ -1,6 +1,6 @@
 package it.cnit.iwf_repository.datashipper;
 
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.site.Site;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,15 +20,13 @@ public class DataShipper {
 
   @SuppressWarnings("unused")
   public enum InfrastructureMetricType {
-    LOST_PKT,
-    RECEIVED_PKT,
-    SENT_PKT,
-    BANDWIDTH,
-    LATENCY,
-    JITTER,
-    CPU_CONSUMPTION,
-    MEMORY_CONSUMPTION,
-    OTHER
+    USER_DATA_RATE_DOWNLINK,
+    USER_DATA_RATE_UPLINK,
+    CAPACITY,
+    LATENCY_USERPLANE,
+    LATENCY_CONTROLPLANE,
+    DEVICE_DENSITY,
+    MOBILITY
   }
 
   @Id
@@ -50,17 +48,17 @@ public class DataShipper {
   private String password;
 
   @NotNull
-  @Column(columnDefinition="TEXT")
+  @Column(columnDefinition = "TEXT")
   private String configurationScript;
 
   @NotNull
-  @Column(columnDefinition="TEXT")
+  @Column(columnDefinition = "TEXT")
   private String stopConfigScript;
 
   @Enumerated(EnumType.STRING)
   private InfrastructureMetricType metricType;
 
-  @ApiModelProperty(hidden = true)
+  @Hidden
   @ManyToOne
   private Site site;
 }

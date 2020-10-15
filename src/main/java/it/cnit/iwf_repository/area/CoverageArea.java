@@ -1,4 +1,4 @@
-package it.cnit.iwf_repository.zone;
+package it.cnit.iwf_repository.area;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.rano.RanOrchestrator;

@@ -3,7 +3,7 @@ package it.cnit.iwf_repository.rano;
 import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.cred.Credentials;
 import it.cnit.iwf_repository.site.Site;
-import it.cnit.iwf_repository.zone.CoverageArea;
+import it.cnit.iwf_repository.area.CoverageArea;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

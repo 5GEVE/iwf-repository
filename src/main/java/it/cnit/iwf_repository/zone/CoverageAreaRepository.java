@@ -5,8 +5,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @SuppressWarnings("unused")
-@RepositoryRestResource(collectionResourceRel = "ranZones", path = "ranZones")
-@Tag(name = "RAN Zones")
-public interface RanZoneRepository extends PagingAndSortingRepository<RanZone, Long> {
+@RepositoryRestResource(collectionResourceRel = "coverageAreas", path = "coverageAreas")
+@Tag(name = "Radio Coverage Areas")
+public interface CoverageAreaRepository extends PagingAndSortingRepository<CoverageArea, Long> {
 
 }

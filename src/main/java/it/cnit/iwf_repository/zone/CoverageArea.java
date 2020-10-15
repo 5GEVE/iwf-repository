@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class RanZone {
+public class CoverageArea {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -22,3 +22,6 @@ buildNumber.properties
 
 /mvn-release.sh
 /mvn-fix.sh
+
+# initialization script
+/py

@@ -3,6 +3,9 @@ package it.cnit.iwf_repository.area;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.rano.RanOrchestrator;
+import java.util.Set;
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -40,8 +43,10 @@ public class CoverageArea {
   @NotNull
   private String name;
 
+  @ElementCollection
+  @CollectionTable(name = "radio_access_technology")
   @Enumerated(EnumType.STRING)
-  private RadioAccessTechnology radioAccessTechnology;
+  private Set<RadioAccessTechnology> radioAccessTechnologies;
 
   private double latitude;
 

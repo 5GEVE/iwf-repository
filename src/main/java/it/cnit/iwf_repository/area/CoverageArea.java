@@ -2,6 +2,7 @@ package it.cnit.iwf_repository.area;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.media.Schema;
 import it.cnit.iwf_repository.rano.RanOrchestrator;
 import java.util.Set;
 import javax.persistence.CollectionTable;
@@ -13,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +34,11 @@ public class CoverageArea {
 
     @JsonValue
     public final String label;
+
+    @Override
+    public String toString() {
+      return label;
+    }
   }
 
   @Id
@@ -48,14 +53,19 @@ public class CoverageArea {
   @Enumerated(EnumType.STRING)
   private Set<RadioAccessTechnology> radioAccessTechnologies;
 
+  @Schema(example = "45.0740984")
   private double latitude;
 
+  @Schema(example = "7.6304583")
   private double longitude;
 
+  @Schema(description = "The radius of the coverage area in Kilometers", example = "1.5")
   private double radius;
 
   @ElementCollection
   @CollectionTable(name = "radio_frequencies")
+  @Schema(description = "Radio frequencies supported",
+      example = "[ \"50MHz\", \"800MHz\", \"6GHz\" ]")
   private Set<String> frequencies;
 
   @Hidden

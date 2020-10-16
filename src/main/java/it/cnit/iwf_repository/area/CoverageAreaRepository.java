@@ -14,6 +14,12 @@ public interface CoverageAreaRepository extends PagingAndSortingRepository<Cover
 
   @Query(nativeQuery = true, value = "select ca.* from site join ran_orchestrator ro join coverage_area ca "
       + "on ro.id = ca.ran_orchestrator_id on site.id = ro.site_id where site.name=:name")
-  Optional<List<CoverageArea>> findBySite(String name);
+  Optional<List<CoverageArea>> findBySiteName(String name);
+
+  @Query(nativeQuery = true, value = "select ca.* from site join ran_orchestrator ro join coverage_area ca "
+      + "on ro.id = ca.ran_orchestrator_id on site.id = ro.site_id where site.id=:id")
+  Optional<List<CoverageArea>> findBySiteId(long id);
+
+  // TODO add find by tech
 
 }

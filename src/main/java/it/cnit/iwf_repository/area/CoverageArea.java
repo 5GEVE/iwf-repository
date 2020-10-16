@@ -46,6 +46,7 @@ public class CoverageArea {
   private long id;
 
   @NotNull
+  @Schema(example = "ITALY.TIM_LAB")
   private String name;
 
   @ElementCollection

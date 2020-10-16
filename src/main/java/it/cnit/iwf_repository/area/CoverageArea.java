@@ -54,13 +54,6 @@ public class CoverageArea {
 
   private double radius;
 
-  // 4G, 5G
-  @Min(4)
-  private int generation;
-
-  // Ex. R16
-  private String release;
-
   // comma-separated list of strings
   private String frequencies;
 
@@ -68,5 +61,4 @@ public class CoverageArea {
   @ManyToOne
   private RanOrchestrator ranOrchestrator;
 
-  // TODO add more RAN capabilities
 }

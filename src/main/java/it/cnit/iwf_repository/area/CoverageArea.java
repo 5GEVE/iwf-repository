@@ -54,8 +54,9 @@ public class CoverageArea {
 
   private double radius;
 
-  // comma-separated list of strings
-  private String frequencies;
+  @ElementCollection
+  @CollectionTable(name = "radio_frequencies")
+  private Set<String> frequencies;
 
   @Hidden
   @ManyToOne

@@ -1,8 +1,11 @@
 package it.cnit.iwf_repository.area;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.Hidden;
 import it.cnit.iwf_repository.rano.RanOrchestrator;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,10 +13,25 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Entity
 @Data
 public class CoverageArea {
+
+  @SuppressWarnings("unused")
+  @RequiredArgsConstructor
+  public enum RadioAccessTechnology {
+    // TODO recheck with Marc
+    _4G("4G"),
+    _5GNSA("5GNSA"),
+    _5GSA("5GSA"),
+    NB_IOT("NB-IoT"),
+    LTE_M("LTE-M");
+
+    @JsonValue
+    public final String label;
+  }
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +39,9 @@ public class CoverageArea {
 
   @NotNull
   private String name;
+
+  @Enumerated(EnumType.STRING)
+  private RadioAccessTechnology radioAccessTechnology;
 
   private double latitude;
 

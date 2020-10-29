@@ -30,7 +30,8 @@ public class CoverageArea {
     _5GNSA("5GNSA"),
     _5GSA("5GSA"),
     NB_IOT("NB-IoT"),
-    LTE_M("LTE-M");
+    LTE_M("LTE-M"),
+    _5GmmWave("5GmmWave");
 
     @JsonValue
     public final String label;

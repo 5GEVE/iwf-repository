@@ -28,10 +28,8 @@ public class Site {
   @Column(unique = true)
   private String name;
 
-  @NotNull
   private String location;
 
-  @NotNull
   @Pattern(regexp = "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$",
       message = "must be a valid IPv4 address")
   private String kafkaIpAddress;

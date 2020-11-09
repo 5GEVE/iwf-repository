@@ -17,7 +17,7 @@ import lombok.Data;
 public class AvailabilityZone {
 
   @SuppressWarnings("unused")
-  enum Location {
+  enum Placement {
     CLOUD,
     EDGE
   }
@@ -31,7 +31,7 @@ public class AvailabilityZone {
 
   @NotNull
   @Enumerated(EnumType.STRING)
-  private Location location = Location.CLOUD;
+  private Placement placement = Placement.CLOUD;
 
   private double latitude;
 

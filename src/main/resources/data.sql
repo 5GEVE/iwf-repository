@@ -18,6 +18,9 @@ ON CONFLICT (name) DO NOTHING;
 INSERT INTO site (name, location) VALUES ('FRANCE_SACLAY', 'Saclay, France')
 ON CONFLICT (name) DO NOTHING;
 
+INSERT INTO site (name, location) VALUES ('FRANCE_LANNION', 'Lannion, France')
+ON CONFLICT (name) DO NOTHING;
+
 INSERT INTO site (name, location) VALUES ('GREECE_ATHENS', 'Athens, Greece')
 ON CONFLICT (name) DO NOTHING;
 
@@ -44,6 +47,10 @@ ON CONFLICT (name) DO NOTHING;
 
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
 VALUES ('FRANCE_SACLAY', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_SACLAY'))
+ON CONFLICT (name) DO NOTHING;
+
+INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)
+VALUES ('FRANCE_LANNION', 'ONAP', '4.0', 'ENABLED', (SELECT id FROM site WHERE name='FRANCE_LANNION'))
 ON CONFLICT (name) DO NOTHING;
 
 INSERT INTO nfv_orchestrator (name, type, version, operational_state, site_id)

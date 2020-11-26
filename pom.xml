@@ -11,7 +11,7 @@
   </parent>
   <groupId>it.cnit</groupId>
   <artifactId>iwf-repository</artifactId>
-  <version>0.1.7</version>
+  <version>1.0.0</version>
   <name>iwf-repository</name>
   <description>Simple REST API to manage 5G EVE site information (formerly site-inventory)
   </description>

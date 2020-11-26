@@ -42,8 +42,8 @@ public class LccnSubscription {
   private UUID nsInstanceId;
 
   @ElementCollection
-  @Enumerated(EnumType.STRING)
   @CollectionTable(name = "notification_type")
+  @Enumerated(EnumType.STRING)
   private Set<NotificationType> notificationTypes = Collections
       .singleton(NotificationType.NsLcmOperationOccurrenceNotification);
 

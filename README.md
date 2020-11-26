@@ -1,20 +1,28 @@
 # IWF Repository
+
 REST API module to manage 5G EVE site information (formerly site-inventory)
 
 ## Install
 
-We use Docker Compose for deployment. Clone this github repository and in the main directory run:
+We use `docker-compose` for deployment. Download [docker-compose.yml](docker-compose.yml) and set a password for the database:
 
+```yaml
+    environment:
+      POSTGRES_USER: iwf-repository
+      POSTGRES_PASSWORD: iwf-repository
 ```
-docker pull maven:3.6.3-jdk-8
-docker pull azul/zulu-openjdk-alpine:8-jre
-docker-compose build
+
+Now run the following commands:
+
+```shell script
+# pull newest images to be sure
+docker-compose pull
 docker-compose up
 ```
 
 You can test the app with:
 
-```
+```shell script
 curl --request GET --url http://127.0.0.1:8087/
 ```
 
@@ -24,7 +32,7 @@ To uninstall, use:
 docker-compose down --remove-orphans --volumes
 ```
 
-*Note: This will delete your database!*
+_Note: This will delete your database!_
 
 ## OpenAPI documentation
 
@@ -44,6 +52,15 @@ Edit and run [add-credentials.sh](scripts/add-credentials.sh) to add credentials
 
 ## Development environment
 
+### With docker-compose:
+
+```shell script
+docker-compose -f docker-compose.dev.yml build
+docker-compose -f docker-compose.dev.yml up
+```
+
+### Manual
+
 Run a postgresql database on your localhost. You can do this manually or with docker:
 
 ```shell script
@@ -52,7 +69,7 @@ docker run -p 5432:5432 --name iwf-repository-db-dev -e POSTGRES_USER=iwf-reposi
 
 As you can see from the command above, set a user and password with value `iwf-repository`.
 
-*Note: database is created and destroyed every time you restart the app.*
+_Note: database is created and destroyed every time you restart the app._
 
 To build the app, run:
 

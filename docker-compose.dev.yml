@@ -11,7 +11,7 @@ services:
           - iwf-repository-app
     ports:
       - 8087:8087
-    command: java -Dspring.jpa.hibernate.ddl-auto=create-drop -jar app.jar
+    command: java -Dspring.profiles.active=dev -Dspring.datasource.url=jdbc:postgresql://iwf-repository-db:5432/iwf-repository -jar app.jar
   iwf-repository-db:
     image: postgres:12-alpine
     environment:

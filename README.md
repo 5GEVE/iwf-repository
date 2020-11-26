@@ -4,18 +4,9 @@ REST API module to manage 5G EVE site information (formerly site-inventory)
 
 ## Install
 
-We use `docker-compose` for deployment. Download [docker-compose.yml](docker-compose.yml) and set a password for the database:
-
-```yaml
-    environment:
-      POSTGRES_USER: iwf-repository
-      POSTGRES_PASSWORD: iwf-repository
-```
-
-Now run the following commands:
+We use `docker-compose` for deployment. Download [docker-compose.yml](docker-compose.yml) and run the following commands:
 
 ```shell script
-# pull newest images to be sure
 docker-compose pull
 docker-compose up
 ```

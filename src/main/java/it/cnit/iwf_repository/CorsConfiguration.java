@@ -1,16 +1,16 @@
 package it.cnit.iwf_repository;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
+import org.springframework.stereotype.Component;
 
-@Configuration
-public class CorsConfiguration implements WebMvcConfigurer {
+@Component
+public class CorsConfiguration extends RepositoryRestConfigurerAdapter {
 
   @Override
-  public void addCorsMappings(CorsRegistry registry) {
-    registry.addMapping("/**");
-  }
+  public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 
+    config.getCorsRegistry().addMapping("/**");
+  }
 }
+

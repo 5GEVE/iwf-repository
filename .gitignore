@@ -22,3 +22,12 @@ buildNumber.properties
 
 /mvn-release.sh
 /mvn-fix.sh
+
+
+# vscode
+
+.vscode
+.classpath
+.project
+.settings
+.factorypath
